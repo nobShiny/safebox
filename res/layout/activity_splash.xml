@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:background="@drawable/bg_box" >
+
+    <com.lsj.safebox.MyShimmerTextView
+        android:id="@+id/shimmer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="310dp"
+        android:text="@string/safebox"
+        android:textSize="40sp" />
+
+    <TextView
+        android:id="@+id/version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/shimmer"
+        android:text="@string/version"
+        android:textSize="20sp"
+        android:textColor="#0000ff" 
+        android:shadowColor="#ff0000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        />
+
+</RelativeLayout>
