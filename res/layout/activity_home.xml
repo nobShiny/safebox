@@ -10,20 +10,57 @@
      	android:layout_height="fill_parent"
      	android:orientation="vertical"
      	android:layout_weight="1">
-     	<LinearLayout 
+     	<LinearLayout  
      	    android:layout_width="fill_parent"
      	    android:layout_height="wrap_content"
      	    android:orientation="horizontal">
      	        <LinearLayout 
 	     	        android:layout_width="108dp"
 	     	        android:layout_height="108dp"
+	     	        android:orientation="vertical"
 	     	        android:background="#FF7F24">
+	     	        <ImageView 
+	     	            android:id="@+id/tv_fangdao"
+	     	            android:layout_width="75dp"
+	     	            android:layout_height="75dp"
+	     	            android:layout_marginTop="10dp"
+	     	            android:layout_marginLeft="15dp"
+	     	            android:src="@drawable/icon_fangdao"
+	     	            />
+
+	     	        <TextView
+	     	            android:id="@+id/iv"
+	     	            android:layout_width="match_parent"
+	     	            android:layout_height="wrap_content"
+	     	            android:layout_marginBottom="1dp"
+	     	            android:text="@string/fangdao"
+	     	            android:textColor="#ffffff" />
+     	           		
      	    	</LinearLayout>
+     	    	
      	        <LinearLayout 
 	     	        android:layout_width="108dp"
 	     	        android:layout_height="108dp"
 	     	        android:layout_marginLeft="5dp"
+	     	        android:orientation="vertical"
 	     	        android:background="#FF7F24">
+	     	        
+     	            <ImageView 
+	     	            android:id="@+id/tv_safecommun"
+	     	            android:layout_width="75dp"
+	     	            android:layout_height="75dp"
+	     	            android:layout_marginTop="10dp"
+	     	            android:layout_marginLeft="15dp"
+	     	            android:src="@drawable/icon_safecommun"
+	     	            />
+
+	     	        <TextView
+	     	            android:id="@+id/iv_safecommun"
+	     	            android:layout_width="match_parent"
+	     	            android:layout_height="wrap_content"
+	     	            android:layout_marginBottom="1dp"
+	     	            android:text="@string/safecommun"
+	     	            android:textColor="#ffffff" />
      	    	</LinearLayout>
      	</LinearLayout>
         
@@ -35,13 +72,49 @@
      	   <LinearLayout 
 	     	        android:layout_width="108dp"
 	     	        android:layout_height="108dp"
-	     	        android:background="#3399ff">
+	     	        android:background="#3399ff"
+	     	        android:orientation="vertical">
+	     	        
+     	       <ImageView 
+	     	            android:id="@+id/tv_systemoptimization"
+	     	            android:layout_width="75dp"
+	     	            android:layout_height="75dp"
+	     	            android:layout_marginTop="10dp"
+	     	            android:layout_marginLeft="15dp"
+	     	            android:src="@drawable/icon_systemoptimization"
+	     	            />
+
+	     	        <TextView
+	     	            android:id="@+id/iv_systemoptimization"
+	     	            android:layout_width="match_parent"
+	     	            android:layout_height="wrap_content"
+	     	            android:layout_marginBottom="1dp"
+	     	            android:text="@string/systemoptimization"
+	     	            android:textColor="#ffffff" />
      	    	</LinearLayout>
      	        <LinearLayout 
 	     	        android:layout_width="108dp"
 	     	        android:layout_height="108dp"
 	     	        android:layout_marginLeft="5dp"
-	     	        android:background="#3399ff">
+	     	        android:background="#3399ff"
+	     	        android:orientation="vertical">
+	     	        
+     	           <ImageView 
+	     	            android:id="@+id/tv_softwearmanager"
+	     	            android:layout_width="75dp"
+	     	            android:layout_height="75dp"
+	     	            android:layout_marginTop="10dp"
+	     	            android:layout_marginLeft="15dp"
+	     	            android:src="@drawable/icon_softwearmanager"
+	     	            />
+
+	     	        <TextView
+	     	            android:id="@+id/iv_softwearmanager"
+	     	            android:layout_width="match_parent"
+	     	            android:layout_height="wrap_content"
+	     	            android:layout_marginBottom="1dp"
+	     	            android:text="@string/softwearmanager"
+	     	            android:textColor="#ffffff" />
      	    	</LinearLayout>
      	</LinearLayout>
      	
@@ -53,13 +126,51 @@
      	  <LinearLayout 
 	     	        android:layout_width="108dp"
 	     	        android:layout_height="108dp"
+	     	        android:orientation="vertical"
 	     	        android:background="#3399ff">
+	     	        
+     	     <ImageView 
+	     	            android:id="@+id/tv_internetmangager"
+	     	            android:layout_width="75dp"
+	     	            android:layout_height="75dp"
+	     	            android:layout_marginTop="10dp"
+	     	            android:layout_marginLeft="15dp"
+	     	            android:src="@drawable/icon_internetmangager"
+	     	            />
+
+	     	        <TextView
+	     	            android:id="@+id/iv_internetmangager"
+	     	            android:layout_width="match_parent"
+	     	            android:layout_height="wrap_content"
+	     	            android:layout_marginBottom="1dp"
+	     	            android:text="@string/internetmangager"
+	     	            android:textColor="#ffffff" />
      	    	</LinearLayout>
+     	    	
+     	  
      	        <LinearLayout 
 	     	        android:layout_width="108dp"
 	     	        android:layout_height="108dp"
 	     	        android:layout_marginLeft="5dp"
+	     	        android:orientation="vertical"
 	     	        android:background="#3399ff">
+	     	        
+     	             <ImageView 
+	     	            android:id="@+id/tv_safedoctor"
+	     	            android:layout_width="75dp"
+	     	            android:layout_height="75dp"
+	     	            android:layout_marginTop="10dp"
+	     	            android:layout_marginLeft="15dp"
+	     	            android:src="@drawable/icon_safedoctor"
+	     	            />
+
+	     	        <TextView
+	     	            android:id="@+id/iv_safedoctor"
+	     	            android:layout_width="match_parent"
+	     	            android:layout_height="wrap_content"
+	     	            android:layout_marginBottom="1dp"
+	     	            android:text="@string/safedoctor"
+	     	            android:textColor="#ffffff" />
      	    	</LinearLayout>
      	</LinearLayout>
      	
@@ -71,16 +182,65 @@
      	 <LinearLayout 
 	     	        android:layout_width="108dp"
 	     	        android:layout_height="108dp"
+	     	        android:orientation="vertical"
 	     	        android:background="#953399ff">
+	     	        
+     	     <ImageView 
+	     	            android:id="@+id/tv_fangyuweishi"
+	     	            android:layout_width="75dp"
+	     	            android:layout_height="75dp"
+	     	            android:layout_marginTop="10dp"
+	     	            android:layout_marginLeft="15dp"
+	     	            android:src="@drawable/icon_fangyuweishi"
+	     	            />
+
+	     	        <TextView
+	     	            android:id="@+id/iv_fangyuweishi"
+	     	            android:layout_width="match_parent"
+	     	            android:layout_height="wrap_content"
+	     	            android:layout_marginBottom="1dp"
+	     	            android:text="@string/fangyuweishi"
+	     	            android:textColor="#ffffff" />
      	    	</LinearLayout>
      	        <LinearLayout 
+     	            android:id="@+id/home_setting"
 	     	        android:layout_width="108dp"
 	     	        android:layout_height="108dp"
 	     	        android:layout_marginLeft="5dp"
+	     	        android:orientation="vertical"
 	     	        android:background="#953399ff">
+	     	        
+     	           <ImageView 
+	     	            android:id="@+id/tv_setting"
+	     	            android:layout_width="75dp"
+	     	            android:layout_height="75dp"
+	     	            android:layout_marginTop="10dp"
+	     	            android:layout_marginLeft="15dp"
+	     	            android:src="@drawable/icon_setting"
+	     	            />
+
+	     	        <TextView
+	     	            android:id="@+id/iv_setting"
+	     	            android:layout_width="match_parent"
+	     	            android:layout_height="wrap_content"
+	     	            android:layout_marginBottom="1dp"
+	     	            android:text="@string/setting"
+	     	            android:textColor="#ffffff" />
      	    	</LinearLayout>
-     	</LinearLayout> 	
-     	    
+     	    	
+     	</LinearLayout>
+     	 	<com.lsj.safebox.ui.FocusedTextView
+     	 	    android:layout_width="220dp"
+     	 	    android:layout_height="wrap_content"
+     	 	    android:gravity="bottom"
+     	 	    android:ellipsize="marquee"
+     	 	    android:singleLine="true"
+     	 	    android:layout_weight="2"
+     	 	    android:text="加油啊!胜利的曙光就是眼前啦,每天对自己说,我行!我行!我行!!"
+     	 	    android:textColor="#ffffff"
+     	 	    android:textColorHighlight="#007fff"
+     	 	    android:textSize="18dip" />
+     	    	
     </LinearLayout>
     <LinearLayout 
         android:layout_width="wrap_content"
@@ -96,27 +256,23 @@
        	    	android:layout_height="wrap_content"
        	    	android:orientation="vertical"
      	        android:layout_alignParentBottom="true">
-		       	<ImageView
-		       	    android:id="@+id/download_btn" 
-		       	 	android:layout_width="36dp"
-		       		android:layout_height="36dp"
-		       		android:src="@drawable/rootblock_icon_download_bg"/>
+		       	
 		       	<ImageView
 		       	    android:id="@+id/safeDr" 
 		       	 	android:layout_width="36dp"
 		       		android:layout_height="36dp"
 		       		android:layout_marginTop="20dp"
-		       		android:src="@drawable/rootblock_icon_clear_bg"/>
+		       		android:src="@drawable/rootblock_icon_update"/>
 		       	<ImageView
 		       	 	android:layout_width="36dp"
 		       		android:layout_height="36dp"
 		       		android:layout_marginTop="20dp"
-		       		android:src="@drawable/rootblock_icon_set_bg"/>
+		       		android:src="@drawable/rootblock_icon_fankui"/>
 		       	<ImageView
 		       	 	android:layout_width="36dp"
 		       		android:layout_height="36dp"
 		       		android:layout_marginTop="20dp"
-		       		android:src="@drawable/rootblock_icon_add_bg"/>
+		       		android:src="@drawable/rootblock_icon_about"/>
        	 	</LinearLayout>
        	</RelativeLayout> 
     </LinearLayout>

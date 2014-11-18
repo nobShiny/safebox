@@ -1,4 +1,4 @@
-package com.lsj.safebox;
+package com.lsj.safebox.ui;
 
 
 import android.content.Context;
@@ -10,6 +10,11 @@ import android.graphics.Shader;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
+/**
+ * 自定义一个闪动文字的TextView
+ * @author Administrator
+ *
+ */
 public class MyShimmerTextView extends TextView {
 
 	private LinearGradient mLinearGradient;
