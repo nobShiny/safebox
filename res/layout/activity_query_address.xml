@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- 公共top栏 开始 -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/flow_ball_ani_full_grey" >
+
+        <Button
+            android:id="@+id/main_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/arrow_left_grey"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_toRightOf="@id/main_back"
+            android:text="号码归属地的查询"
+            android:textColor="#ffffff"
+            android:textSize="22sp" />
+    </RelativeLayout>
+    <!-- 公共top栏 结束 -->
+
+    <EditText
+        android:id="@+id/et_phonenum"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="请输入您要查询的电话号码"
+        android:inputType="phone" >
+
+        <requestFocus />
+    </EditText>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <Button
+            android:id="@+id/qingkong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/image_icon_bg"
+            android:layout_centerInParent="true"
+            android:onClick="**"
+            android:text="清空" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/image_icon_bg"
+            android:layout_toRightOf="@id/qingkong"
+            android:onClick="query"
+            android:text="查询" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="320dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:background="@drawable/btn_disabled"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</LinearLayout>

@@ -5,32 +5,95 @@
     android:versionName="1.0.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="14"
         android:targetSdkVersion="17" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.DELETE_PACKAGES" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/safebox_logo"
         android:label="@string/safebox"
-        android:theme="@style/AppTheme"
-         >
+        android:theme="@style/AppTheme" >
         <activity
-            android:name="com.lsj.safebox.Splash_MainActivity"
-            android:label="@string/app_name"
-             >
+            android:name="com.lsj.safebox.ui.Splash_MainActivity"
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.lsj.safebox.ui.HomeActivity" />
+        <activity android:name="com.lsj.safebox.ui.SettingActivity" />
+        <activity android:name="com.lsj.safebox.ui.SecurityActivity" />
+        <activity android:name="com.lsj.safebox.ui.SecurityActivity_setup_one" />
+        <activity android:name="com.lsj.safebox.ui.SecureCommActivity" />
+        <activity android:name="com.lsj.safebox.ui.QueryAddressActivity" />
+        <activity android:name=".DragViewActivty"
+            	  android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
         
-        <activity android:name="com.lsj.safebox.HomeActivity"/>
-        <activity android:name="com.lsj.safebox.SettingActivity"/>
-        <activity android:name="com.lsj.safebox.SecurityActivity"/>
-        <activity android:name="com.lsj.safebox.SecurityActivity_setup_one"/>
+
+        <!-- 软件管理 开始 -->
+        <activity
+            android:name="com.lsj.safebox.ui.FileExporerTabActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:uiOptions="splitActionBarWhenNarrow" >
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <action android:name="android.intent.action.MEDIA_UNMOUNTED" />
+
+                <data android:scheme="file" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT" />
+
+                <category android:name="android.intent.category.OPENABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="*/*" />
+            </intent-filter>
+        </activity>
         
+        <activity android:name=".net.micode.fileexplorer.SearchActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        
+        <activity
+            android:name="com.lsj.safebox.ui.FileExplorerPreferenceActivity"
+            android:label="@string/menu_setting"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar">
+            <!-- android:theme="@android:style/Theme.Holo.Light.NoActionBar" -->
+        </activity>
+        <meta-data
+            android:name="android.app.default_searchable"
+            android:value=".SearchActivity" />
+        <!-- 软件管理 结束 -->
+
+        <service android:name=".FTPServerService" />
+        <service android:name=".service.LocationService" />
+        <service android:name="com.lsj.safebox.service.AddressService" />
     </application>
 
 </manifest>

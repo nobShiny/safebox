@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- 公共top栏 开始 -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/flow_ball_ani_full_grey" >
+
+        <Button
+            android:id="@+id/main_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/arrow_left_grey"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_toRightOf="@id/main_back"
+            android:text="安全通讯"
+            android:textColor="#ffffff"
+            android:textSize="22sp" />
+    </RelativeLayout>
+    <!-- 公共top栏 结束 -->
+
+
+    <!-- 归属地 开始 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_gsd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:text="归属地" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="59dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/grey_line_frame_background" >
+
+            <TextView
+                android:id="@+id/tv_title_gsd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="7dp"
+                android:text="归属地查询"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_context_gsd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_title_gsd"
+                android:layout_marginBottom="100dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="手机号码归属地查询"
+                android:textColor="#000000"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btn_guishudi"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/operation_button_send"
+                android:textColor="#ffffff" />
+        </RelativeLayout>
+    </LinearLayout>
+    <!-- 归属地 结束 -->
+
+
+    <!-- 黑名单管理 开始 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_hmd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:text="黑名单管理" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="59dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/grey_line_frame_background" >
+
+            <TextView
+                android:id="@+id/tv_title_hmd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="7dp"
+                android:text="黑名单管理"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_context_hmd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_title_hmd"
+                android:layout_marginBottom="100dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="黑名单/白名单管理"
+                android:textColor="#000000"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btn_heimingdan"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/operation_button_send"
+                android:textColor="#ffffff" />
+        </RelativeLayout>
+    </LinearLayout>
+    <!-- 黑名单管理 开始 -->
+    
+    <!-- 拦截规则 开始 -->
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_ljgz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:text="拦截规则" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="59dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/grey_line_frame_background" >
+
+            <TextView
+                android:id="@+id/tv_title_ljgz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="7dp"
+                android:text="拦截规则"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_context_ljgz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_title_ljgz"
+                android:layout_marginBottom="100dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="拦截规则设置管理"
+                android:textColor="#000000"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btn_lanjieguize"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/operation_button_send"
+                android:textColor="#ffffff" />
+        </RelativeLayout>
+    </LinearLayout>
+	 <!-- 拦截规则 结束 -->
+	 
+	 <!-- 短信备份 开始 -->
+	 <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_dxbf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:text="短信备份" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="59dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/grey_line_frame_background" >
+
+            <TextView
+                android:id="@+id/tv_title_dxbf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="7dp"
+                android:text="短信备份"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_context_dxbf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_title_dxbf"
+                android:layout_marginBottom="100dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="手机短信备份上传"
+                android:textColor="#000000"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btn_duanxinbeifen"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/operation_button_send"
+                android:textColor="#ffffff" />
+        </RelativeLayout>
+    </LinearLayout>
+	  <!-- 短信备份 结束 -->
+</LinearLayout>
