@@ -5,13 +5,12 @@ import com.lsj.safebox.R;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class SettingClickView extends RelativeLayout {
 
-	private TextView title;
+	private TextView tv_zdgx,title;
 	private TextView content;
 
 	public SettingClickView(Context context, AttributeSet attrs, int defStyle) {
@@ -32,10 +31,20 @@ public class SettingClickView extends RelativeLayout {
 
 	private void init() {
 		View view = View.inflate(getContext(), R.layout.setting_click_view,this);// 创建了布局 直接告诉他爹是谁
+		tv_zdgx = (TextView) view.findViewById(R.id.tv_zdgx);
 		title = (TextView) view.findViewById(R.id.tv_title);
 		content = (TextView) view.findViewById(R.id.tv_content);
 	}
 
+	
+	/**
+	 * 修改类别
+	 */
+	
+	public void setCategory(String str){
+		tv_zdgx.setText(str);
+	}
+	
 	/**
 	 * 修改标题
 	 */

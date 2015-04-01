@@ -45,34 +45,42 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content" >
 
         <Button
             android:id="@+id/qingkong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:background="@drawable/image_icon_bg"
-            android:layout_centerInParent="true"
             android:onClick="**"
             android:text="清空" />
 
-        <Button
+        <!--
+              <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/image_icon_bg"
             android:layout_toRightOf="@id/qingkong"
             android:onClick="query"
-            android:text="查询" />
+            android:text="查询" />        -->
+        
     </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="地区显示:" 
+        android:layout_marginLeft="10dp"
+        android:textSize="25dp"/>
 
     <TextView
         android:id="@+id/tv_address"
         android:layout_width="320dp"
         android:layout_height="200dp"
         android:layout_marginTop="10dp"
-        android:gravity="center_horizontal|center_vertical"
         android:background="@drawable/btn_disabled"
+        android:gravity="center_horizontal|center_vertical"
         android:text=""
         android:textAppearance="?android:attr/textAppearanceLarge" />
 

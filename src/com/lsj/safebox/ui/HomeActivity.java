@@ -1,5 +1,8 @@
 package com.lsj.safebox.ui;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import com.lsj.safebox.R;
 import com.lsj.safebox.utils.MD5Utils;
 
@@ -11,6 +14,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -314,5 +318,39 @@ public class HomeActivity extends Activity implements OnClickListener {
 	}
 
 	
+	/**
+	 * Ë«»÷ÍË³ö
+	 */
+	 private static Boolean isQuit = false;
+	    Timer timer = new Timer();
+	    public boolean onKeyDown(int keyCode, KeyEvent event)
+	    {
+	    	
+	    	if (keyCode == KeyEvent.KEYCODE_BACK)
+	    	{
+	    		    
+	    		if (isQuit == false) 
+	            {
+	    			isQuit = true;
+	                Toast.makeText(getBaseContext(), "Ë«»÷ÍË³ö", Toast.LENGTH_SHORT).show();
+	                TimerTask task = null;
+	                task = new TimerTask() 
+	                {
+	                	@Override
+	                    public void run() 
+	                	{
+	                        isQuit = false;
+	                    }
+	                };
+	                timer.schedule(task, 2000);
+	            } 
+	    		else
+	    		{
+	                  finish();
+	                  //System.exit(0);
+	            }
+	        }
+	        return false;
+	    }
 
 }

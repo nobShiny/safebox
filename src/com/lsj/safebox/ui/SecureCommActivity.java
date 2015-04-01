@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 public class SecureCommActivity extends Activity implements OnClickListener {
@@ -42,7 +43,8 @@ public class SecureCommActivity extends Activity implements OnClickListener {
 			startActivity(intent);
 			break;
 		case R.id.btn_heimingdan://黑名单管理
-			Toast.makeText(getApplicationContext(), "88", 0).show();
+			intent = new Intent(getApplicationContext(),CallSmsSafeActivity.class);
+			startActivity(intent);
 			break;
 		case R.id.btn_lanjieguize://拦截设置
 			
@@ -56,4 +58,8 @@ public class SecureCommActivity extends Activity implements OnClickListener {
 
 		}
 	}
+	
+	
+	
+	
 }

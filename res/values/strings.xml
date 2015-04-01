@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:android="http://schemas.android.com/apk/res/android" 
-    	   xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <string name="app_name">安全盒子</string>
     <string name="action_settings">Settings</string>
@@ -15,6 +14,9 @@
     <string name="fangyuweishi">防御卫士</string>
     <string name="setting">设置中心</string>
     
+    <string name="sample_device_admin_description">激活后可以远程锁屏,远程擦除数据</string>
+    <string name="sample_device_admin">手机卫士</string>
+
     <!-- 文件管理器  开始 -->
     <string name="added_favorite">Added to Favorites</string>
     <string name="cancel">Cancel</string>
@@ -82,8 +84,8 @@
     <string name="operation_show_sys">Show hidden files</string>
     <string name="operation_unfavorite">Remove from Favorites</string>
     <string name="removed_favorite">Removed from Favorites</string>
- 	<string name="sd_card_available">Space available:<xliff:g id="available_size">%1$s</xliff:g></string>     
-    <string name="sd_card_size">SD card:<xliff:g id="total_size">%1$s</xliff:g></string>  
+    <string name="sd_card_available">Space available:<xliff:g id="available_size">%1$s</xliff:g></string>
+    <string name="sd_card_size">SD card:<xliff:g id="total_size">%1$s</xliff:g></string>
     <string name="pref_primary_folder_summary">The folder that appears when the app starts, and current value is <xliff:g id="string">%1$s</xliff:g></string>
     <string name="multi_select_title">Selected <xliff:g id="number">%1$s</xliff:g> item(s)</string>
     <string name="sd_folder">SD card</string>
@@ -104,7 +106,8 @@
     <string name="dialog_type_image">Image</string>
     <string name="favorite_photo">Photo</string>
     <string name="favorite_sdcard">SD Card</string>
-    <string name="favourite_root">Root</string><string name="favorite_screen_cap">MIUI Screen Shot</string>
+    <string name="favourite_root">Root</string>
+    <string name="favorite_screen_cap">MIUI Screen Shot</string>
     <string name="favorite_ringtone">Ringtone</string>
     <string name="menu_setting">Preferences</string>
     <string name="menu_exit">Exit</string>
@@ -116,4 +119,5 @@
     <string name="pref_show_real_path_summary">Show real path in navigation bar</string>
 
     <!-- 文件管理器  结束 -->
+
 </resources>

@@ -107,6 +107,7 @@
             android:text="黑名单管理" />
 
         <RelativeLayout
+            android:id="@+id/sv_securecomm_blanknum"
             android:layout_width="wrap_content"
             android:layout_height="59dp"
             android:layout_marginBottom="10dp"

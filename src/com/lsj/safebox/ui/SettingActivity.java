@@ -4,6 +4,7 @@ import com.lsj.safebox.R;
 import com.lsj.safebox.custom.ui.SettingClickView;
 import com.lsj.safebox.custom.ui.SettingView;
 import com.lsj.safebox.service.AddressService;
+import com.lsj.safebox.service.BlankNumService;
 import com.lsj.safebox.utils.ServiceUtils;
 
 import android.app.Activity;
@@ -17,10 +18,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 
 public class SettingActivity extends Activity implements OnClickListener {
 
-	private SettingView sv_setting_update, sv_setting_address;
+	private SettingView sv_setting_update, sv_setting_address,sv_setting_blanknum;
 	private SettingClickView sv_setting_changebg,sv_setting_change_postion;
 	private SharedPreferences sp;
 	private Button btn_return;
@@ -33,12 +35,13 @@ public class SettingActivity extends Activity implements OnClickListener {
 		sv_setting_address = (SettingView) findViewById(R.id.sv_setting_address);
 		sv_setting_changebg = (SettingClickView) findViewById(R.id.sv_setting_changebg);
 		sv_setting_change_postion = (SettingClickView) findViewById(R.id.sv_setting_change_postion);
+		sv_setting_blanknum = (SettingView) findViewById(R.id.sv_setting_blanknum);
 		
 		sp = getSharedPreferences("config", MODE_PRIVATE);
 
 		update();//自动更新选项
-//		address();//来电地区提醒
 		changebg();//修改来电框样式
+		
 		changePostion();//修改来电框位置
 
 		// 返回按钮
@@ -47,20 +50,55 @@ public class SettingActivity extends Activity implements OnClickListener {
 
 	}
 
+	/**
+	 * 来电地区提醒
+	 */
 	@Override
 	protected void onStart() {
 		super.onStart();
 		
-		address();
+		address();//归属地显示
+		blanknum();//黑名单功能
 	}
 	
+	/**
+	 * 黑名单拦截功能
+	 */
+	private void blanknum() {
+		// 数据回显 
+				if(ServiceUtils.isRunning(this, "com.lsj.safebox.service.BlankNumService")){
+					sv_setting_blanknum.setChecked(true);
+				}else{
+					sv_setting_blanknum.setChecked(false);
+				}
+				
+				sv_setting_blanknum.setOnClickListener(new OnClickListener() {
+					
+					@Override
+					public void onClick(View v) {
+						Intent intent=new Intent(getApplicationContext(), BlankNumService.class);
+						if(sv_setting_blanknum.isChecked()){
+							//  停止服务 
+							
+							stopService(intent);
+							sv_setting_blanknum.setChecked(false);
+						}else{
+							// 开启服务 
+							startService(intent);
+							sv_setting_blanknum.setChecked(true);
+						}
+					}
+				});
+			}
+	
+
 	/**
 	 * 来电归属地设置
 	 */
 	private void address() {
 		// 数据回显
 		if (ServiceUtils.isRunning(this,
-				"com.itheima.mobilesafe.service.AddressService")) {
+				"com.lsj.safebox.service.AddressService")) {
 			sv_setting_address.setChecked(true);
 		} else {
 			sv_setting_address.setChecked(false);
@@ -90,6 +128,7 @@ public class SettingActivity extends Activity implements OnClickListener {
 	 * 修改提示框的位置
 	 */
 	private void changePostion() {
+		sv_setting_change_postion.setCategory("提示框位置");
 		sv_setting_change_postion.setTiTle("归属地提示框位置");
 		sv_setting_change_postion.setContent("设置归属地提示框的显示位置");
 		sv_setting_change_postion.setOnClickListener(new OnClickListener() {
@@ -106,17 +145,21 @@ public class SettingActivity extends Activity implements OnClickListener {
 	 * 修改来电提醒位置栏
 	 */
 	private void changebg() {
-		final String[] items = { "半透明", "活力橙", "卫士蓝", "金属灰", "苹果绿" };
+		final String[] items = { "半透明", "果缤橙", "天空蓝", "雾霾灰", "草原绿" };
+		
+		sv_setting_changebg.setCategory("提示框风格");
 		sv_setting_changebg.setTiTle("归属地提示框风格");
 		sv_setting_changebg.setContent(items[sp.getInt("which", 0)]);
-		sv_setting_changebg.setOnClickListener(new OnClickListener() {
+		sv_setting_changebg.setOnClickListener(new OnClickListener() {     
 
 			@Override
 			public void onClick(View v) {
 				AlertDialog.Builder builder = new Builder(SettingActivity.this);
 				builder.setTitle("归属地提示框风格");
 				builder.setIcon(R.drawable.ic_launcher);
-				// 参数1 单选框对应的字符串数组 参数2 默认选中的哪个位置 参数3 选中事件
+				// 参数1 单选框对应的字符串数组 
+				// 参数2 默认选中的哪个位置 
+				// 参数3 选中事件
 				builder.setSingleChoiceItems(items, sp.getInt("which", 0),
 						new DialogInterface.OnClickListener() {
 							// which 点击的哪一个条目
