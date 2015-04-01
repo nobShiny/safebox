@@ -83,7 +83,7 @@ public class HomeActivity extends Activity implements OnClickListener {
 			
 			break;
 		case R.id.ll_ruanjianguanli://进入软件管理功能
-			intent = new Intent(HomeActivity.this,FileExporerTabActivity.class);
+			intent = new Intent(HomeActivity.this,SoftwareManagerViewActivity.class);
 			startActivity(intent);
 			break;
 
@@ -332,7 +332,7 @@ public class HomeActivity extends Activity implements OnClickListener {
 	    		if (isQuit == false) 
 	            {
 	    			isQuit = true;
-	                Toast.makeText(getBaseContext(), "双击退出", Toast.LENGTH_SHORT).show();
+	                Toast.makeText(getBaseContext(), "连续点击两次退出", Toast.LENGTH_SHORT).show();
 	                TimerTask task = null;
 	                task = new TimerTask() 
 	                {

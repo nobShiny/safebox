@@ -5,6 +5,7 @@
      <color name="head_text">#0e5986</color>
     <color name="author_text">#0e5986</color>
     <color name="white">#ffffff</color>
+    <color name="wwhite">#FFFAFA</color>
     <!-- 白色 -->
     <color name="ivory">#fffff0</color>
     <!-- 象牙色 -->
@@ -297,6 +298,9 @@
     <!-- 暗蓝色 -->
     <color name="navy">#000080</color>
     <!-- 海军色 -->
+    
+    <color name="blak">#000000</color>
+    <color name="yell">#FF8C00</color>
     
     <color name="black">#000</color>
     <color name="transparent">#0000</color>

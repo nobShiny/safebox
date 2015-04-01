@@ -49,6 +49,7 @@
             android:text="归属地" />
 
         <RelativeLayout
+            android:id="@+id/btn_guishudi"
             android:layout_width="wrap_content"
             android:layout_height="59dp"
             android:layout_marginBottom="10dp"
@@ -79,7 +80,6 @@
                 android:textSize="11sp" />
 
             <Button
-                android:id="@+id/btn_guishudi"
                 android:layout_width="50dp"
                 android:layout_height="30dp"
                 android:layout_alignParentRight="true"
@@ -92,6 +92,7 @@
 
 
     <!-- 黑名单管理 开始 -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -107,7 +108,7 @@
             android:text="黑名单管理" />
 
         <RelativeLayout
-            android:id="@+id/sv_securecomm_blanknum"
+            android:id="@+id/btn_heimingdan"
             android:layout_width="wrap_content"
             android:layout_height="59dp"
             android:layout_marginBottom="10dp"
@@ -138,7 +139,6 @@
                 android:textSize="11sp" />
 
             <Button
-                android:id="@+id/btn_heimingdan"
                 android:layout_width="50dp"
                 android:layout_height="30dp"
                 android:layout_alignParentRight="true"
@@ -148,9 +148,11 @@
         </RelativeLayout>
     </LinearLayout>
     <!-- 黑名单管理 开始 -->
-    
+
+
     <!-- 拦截规则 开始 -->
-     <LinearLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
@@ -165,6 +167,7 @@
             android:text="拦截规则" />
 
         <RelativeLayout
+            android:id="@+id/btn_lanjieguize"
             android:layout_width="wrap_content"
             android:layout_height="59dp"
             android:layout_marginBottom="10dp"
@@ -195,7 +198,6 @@
                 android:textSize="11sp" />
 
             <Button
-                android:id="@+id/btn_lanjieguize"
                 android:layout_width="50dp"
                 android:layout_height="30dp"
                 android:layout_alignParentRight="true"
@@ -204,10 +206,12 @@
                 android:textColor="#ffffff" />
         </RelativeLayout>
     </LinearLayout>
-	 <!-- 拦截规则 结束 -->
-	 
-	 <!-- 短信备份 开始 -->
-	 <LinearLayout
+    <!-- 拦截规则 结束 -->
+
+
+    <!-- 短信备份 开始 -->
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
@@ -222,6 +226,7 @@
             android:text="短信备份" />
 
         <RelativeLayout
+            android:id="@+id/btn_duanxinbeifen"
             android:layout_width="wrap_content"
             android:layout_height="59dp"
             android:layout_marginBottom="10dp"
@@ -252,7 +257,6 @@
                 android:textSize="11sp" />
 
             <Button
-                android:id="@+id/btn_duanxinbeifen"
                 android:layout_width="50dp"
                 android:layout_height="30dp"
                 android:layout_alignParentRight="true"
@@ -261,5 +265,6 @@
                 android:textColor="#ffffff" />
         </RelativeLayout>
     </LinearLayout>
-	  <!-- 短信备份 结束 -->
+    <!-- 短信备份 结束 -->
+
 </LinearLayout>

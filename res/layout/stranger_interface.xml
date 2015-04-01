@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/strange_quit"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:background="#696969"
+        android:drawableLeft="@drawable/y5"
+        android:drawablePadding="25dp"
+        android:gravity="center_vertical"
+        android:onClick="quit"
+        android:text="@string/sstranger_set"
+        android:textColor="@color/blak"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/wwhite"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+
+        <TextView
+            android:id="@+id/strange_smsinstall"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingTop="20dp"
+            android:text="@string/smsinstall"
+            android:textColor="@color/blak"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="@color/gray" />
+
+        <TextView
+            android:id="@+id/strange_timeinstall"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="12dp"
+            android:paddingTop="10dp"
+            android:text="@string/timeinstrall"
+            android:textColor="@color/blak"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="7dp"
+            android:paddingTop="5dp"
+            android:text="@string/mast"
+            android:textColor="@color/yell"
+            android:textSize="21sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:background="@color/yell" />
+
+        <LinearLayout
+            android:id="@+id/strange_smslinear"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingTop="15dp" >
+
+            <TextView
+                android:layout_width="200sp"
+                android:layout_height="50sp"
+                android:text="@string/smsfrequency"
+                android:textColor="@color/blak"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/strange_smssinstall"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:paddingTop="23dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="@color/gray" />
+
+        <LinearLayout
+            android:id="@+id/strange_phonelinear"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp" >
+
+            <TextView
+                android:layout_width="200sp"
+                android:layout_height="50sp"
+                android:text="@string/phonefrequency"
+                android:textColor="@color/blak"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/strange_phoneinstall"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:paddingTop="23dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="@color/gray" />
+
+        <LinearLayout
+            android:id="@+id/strange_timelinear"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="1dp"
+            android:paddingTop="10dp" >
+
+            <TextView
+                android:layout_width="200sp"
+                android:layout_height="50sp"
+                android:text="@string/timespan"
+                android:textColor="@color/blak"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/strange_timespaneinstall"
+                android:layout_width="match_parent"
+                android:layout_height="50sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="@color/gray" />
+    </LinearLayout>
+
+</LinearLayout>

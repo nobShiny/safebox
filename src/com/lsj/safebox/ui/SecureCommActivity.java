@@ -8,11 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 public class SecureCommActivity extends Activity implements OnClickListener {
-	private Button guishudi,heimingdan,lanjieguize,duanxinbeifen,main_back;
+	private RelativeLayout guishudi,heimingdan,lanjieguize,duanxinbeifen;
+	private Button main_back;
 	
 
 	@Override
@@ -20,10 +22,10 @@ public class SecureCommActivity extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_securecomm);
-		guishudi = (Button) findViewById(R.id.btn_guishudi);
-		heimingdan = (Button) findViewById(R.id.btn_heimingdan);
-		lanjieguize = (Button) findViewById(R.id.btn_lanjieguize);
-		duanxinbeifen = (Button) findViewById(R.id.btn_duanxinbeifen);
+		guishudi = (RelativeLayout) findViewById(R.id.btn_guishudi);
+		heimingdan = (RelativeLayout) findViewById(R.id.btn_heimingdan);
+		lanjieguize = (RelativeLayout) findViewById(R.id.btn_lanjieguize);
+		duanxinbeifen = (RelativeLayout) findViewById(R.id.btn_duanxinbeifen);
 		main_back = (Button) findViewById(R.id.main_back);
 		
 		guishudi.setOnClickListener(this);
@@ -47,7 +49,8 @@ public class SecureCommActivity extends Activity implements OnClickListener {
 			startActivity(intent);
 			break;
 		case R.id.btn_lanjieguize://拦截设置
-			
+			intent = new Intent(getApplicationContext(),BlockingRuleViewActivity.class);
+			startActivity(intent);
 			break;
 		case R.id.btn_duanxinbeifen://短信备份
 			

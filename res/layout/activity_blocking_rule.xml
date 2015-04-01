@@ -3,6 +3,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
+
+    <!-- 公共top栏 开始 -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/flow_ball_ani_full_grey" >
+
+        <Button
+            android:id="@+id/main_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/arrow_left_grey"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_toRightOf="@id/main_back"
+            android:text="拦截规则"
+            android:textColor="#ffffff"
+            android:textSize="22sp" />
+    </RelativeLayout>
+    <!-- 公共top栏 结束 -->
     
+     <ListView 
+        android:id="@+id/rule_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:choiceMode="singleChoice"
+        android:descendantFocusability= "blocksDescendants" 
+        />
 
 </LinearLayout>

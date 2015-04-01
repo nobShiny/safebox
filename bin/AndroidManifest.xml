@@ -49,9 +49,17 @@
         <activity android:name="com.lsj.safebox.ui.DragViewActivty"
             	  android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
         <activity android:name="com.lsj.safebox.ui.CallSmsSafeActivity"/>
+        <activity android:name="com.lsj.safebox.ui.SoftwareManagerViewActivity"/>
+        <activity android:name="com.lsj.safebox.ui.BlockingRuleViewActivity"/>
         
+        <!-- 拦截规则 开始 -->
+        <activity android:name="com.lsj.safebox.ui.Stranger_set"/>
+        <activity android:name="com.lsj.safebox.ui.Trule"/>
+        <activity android:name="com.lsj.safebox.utils.Province"/>
+        <activity android:name="com.lsj.safebox.utils.City"/>
+        <activity android:name="com.lsj.safebox.ui.Time_set"/>
         
-        
+        <!-- 拦截规则 结束 -->
         
         <receiver android:name="com.lsj.safebox.receiver.BootCompleteReceiver" >
             <intent-filter>
