@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+
+    <!-- 公共top栏 开始 -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/flow_ball_ani_full_grey" >
+
+        <Button
+            android:id="@+id/main_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/arrow_left_grey"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_toRightOf="@id/main_back"
+            android:text="短信备份/还原"
+            android:textColor="#ffffff"
+            android:textSize="22sp" />
+    </RelativeLayout>
+    <!-- 公共top栏 结束 -->
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_dxbf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:text="短信备份" />
+
+        <RelativeLayout
+            android:id="@+id/btn_duanxinbeifen"
+            android:layout_width="wrap_content"
+            android:layout_height="59dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:onClick="smsBackup"
+            android:background="@drawable/grey_line_frame_background" >
+
+            <TextView
+                android:id="@+id/tv_title_dxbf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="7dp"
+                android:text="短信备份"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_context_dxbf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_title_dxbf"
+                android:layout_marginBottom="100dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="将您的手机短信备份到SD卡上"
+                android:textColor="#000000"
+                android:textSize="11sp" />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/operation_button_send"
+                android:textColor="#ffffff" />
+        </RelativeLayout>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_dxhy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:text="短信还原" />
+
+        <RelativeLayout
+            android:id="@+id/btn_duanxinhuanyuan"
+            android:layout_width="wrap_content"
+            android:layout_height="59dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:onClick="smsRestore"
+            android:background="@drawable/grey_line_frame_background" >
+
+            <TextView
+                android:id="@+id/tv_title_dxhy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="7dp"
+                android:text="短信还原"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_context_dxhy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_title_dxhy"
+                android:layout_marginBottom="100dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="从SD卡上还原短信记录到手机内存中"
+                android:textColor="#000000"
+                android:textSize="11sp" />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/operation_button_send"
+                android:textColor="#ffffff" />
+        </RelativeLayout>
+    </LinearLayout>
+    
+    
+</LinearLayout>
