@@ -77,6 +77,15 @@
             lsj:des_off="黑名单拦截关闭"
             lsj:des_on="黑名单拦截开启"
             lsj:title1="黑名单拦截" />
+        <com.lsj.safebox.custom.ui.SettingView
+            android:id="@+id/sv_setting_applock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            lsj:category="程序加密设置"
+            lsj:des_off="程序加密服务关闭"
+            lsj:des_on="程序加密服务开启"
+            lsj:title1="程序加密" />
 
 
 

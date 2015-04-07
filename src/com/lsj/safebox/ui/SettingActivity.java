@@ -5,6 +5,7 @@ import com.lsj.safebox.custom.ui.SettingClickView;
 import com.lsj.safebox.custom.ui.SettingView;
 import com.lsj.safebox.service.AddressService;
 import com.lsj.safebox.service.BlankNumService;
+import com.lsj.safebox.service.MonitorSerivce;
 import com.lsj.safebox.utils.ServiceUtils;
 
 import android.app.Activity;
@@ -22,7 +23,7 @@ import android.widget.RelativeLayout;
 
 public class SettingActivity extends Activity implements OnClickListener {
 
-	private SettingView sv_setting_update, sv_setting_address,sv_setting_blanknum;
+	private SettingView sv_setting_update, sv_setting_address,sv_setting_blanknum,sv_setting_applock;
 	private SettingClickView sv_setting_changebg,sv_setting_change_postion;
 	private SharedPreferences sp;
 	private Button btn_return;
@@ -36,6 +37,7 @@ public class SettingActivity extends Activity implements OnClickListener {
 		sv_setting_changebg = (SettingClickView) findViewById(R.id.sv_setting_changebg);
 		sv_setting_change_postion = (SettingClickView) findViewById(R.id.sv_setting_change_postion);
 		sv_setting_blanknum = (SettingView) findViewById(R.id.sv_setting_blanknum);
+		sv_setting_applock = (SettingView) findViewById(R.id.sv_setting_applock);
 		
 		sp = getSharedPreferences("config", MODE_PRIVATE);
 
@@ -43,6 +45,7 @@ public class SettingActivity extends Activity implements OnClickListener {
 		changebg();//修改来电框样式
 		
 		changePostion();//修改来电框位置
+		applock();//程序加密
 
 		// 返回按钮
 		btn_return = (Button) findViewById(R.id.main_back);
@@ -59,6 +62,35 @@ public class SettingActivity extends Activity implements OnClickListener {
 		
 		address();//归属地显示
 		blanknum();//黑名单功能
+	}
+	
+	/**
+	 * 程序加密设置
+	 */
+	private void applock(){
+		if(ServiceUtils.isRunning(this, "com.lsj.safebox.service.MonitorSerivce")){
+			sv_setting_applock.setChecked(true);
+		}else{
+			sv_setting_applock.setChecked(false);
+		}
+		
+		sv_setting_applock.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent=new Intent(getApplicationContext(), MonitorSerivce.class);
+				if(sv_setting_applock.isChecked()){
+					//  停止服务 
+					
+					stopService(intent);
+					sv_setting_applock.setChecked(false);
+				}else{
+					// 开启服务 
+					startService(intent);
+					sv_setting_applock.setChecked(true);
+				}
+			}
+		});
 	}
 	
 	/**

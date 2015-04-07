@@ -3,7 +3,7 @@
     package="com.lsj.safebox"
     android:versionCode="1"
     android:versionName="1.0.0"
-    android:installLocation="preferExternal" >
+    android:installLocation="auto" >
 
     <uses-sdk
         android:minSdkVersion="10"
@@ -28,6 +28,11 @@
     <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
     <uses-permission android:name="android.permission.READ_SMS"/>
     <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+    
     
 
     <application
@@ -38,14 +43,15 @@
         <activity
             android:name="com.lsj.safebox.ui.Splash_MainActivity"
             android:label="@string/app_name" >
-            
-        </activity>
-        <activity android:name="com.lsj.safebox.ui.HomeActivity" >
-       		<intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="com.lsj.safebox.ui.HomeActivity" 
+            android:configChanges="keyboardHidden|screenSize|orientation">
+            
          </activity>   
         <activity android:name="com.lsj.safebox.ui.SettingActivity" />
         <activity android:name="com.lsj.safebox.ui.SecurityActivity" />
@@ -58,18 +64,32 @@
         <activity android:name="com.lsj.safebox.ui.SoftwareManagerViewActivity"/>
         <activity android:name="com.lsj.safebox.ui.BlockingRuleViewActivity"/>
         <activity android:name="com.lsj.safebox.ui.SoftManagerActivity"/>
-        <activity android:name="com.lsj.safebox.ui.SmsBackupActivity"/>
+        <activity android:name="com.lsj.safebox.ui.SmsBackupActivity"
+            	  android:configChanges="keyboardHidden|screenSize|orientation"/>
+        <activity android:name=".ui.AntiVirusActivity"
+            	  android:configChanges="keyboardHidden|screenSize|orientation"/>
+        <activity android:name="com.lsj.safebox.ui.SystemOptActivityView"
+                  android:configChanges="keyboardHidden|screenSize|orientation"/>
+        <activity android:name="com.lsj.safebox.ui.TaskManagerActivity"
+                  android:configChanges="keyboardHidden|screenSize|orientation"/>
+        <activity android:name="com.lsj.safebox.ui.TaskManagerSettingActivity"
+                  android:configChanges="keyboardHidden|screenSize|orientation"/>
+        <activity android:name="com.lsj.safebox.ui.DefenseActivityView"
+                  android:configChanges="keyboardHidden|screenSize|orientation"/>
+        <activity android:name="com.lsj.safebox.receiver.MyAppWidget"/>
+        <activity android:name="com.lsj.safebox.ui.PrivacyViewActivity"/>
+        <activity android:name="com.lsj.safebox.ui.AppLockActivity"/>
+        <activity android:name="com.lsj.safebox.ui.EnterPwdActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"/>
             
         
         
-        <!-- 拦截规则 开始 -->
         <activity android:name="com.lsj.safebox.ui.Stranger_set"/>
         <activity android:name="com.lsj.safebox.ui.Trule"/>
         <activity android:name="com.lsj.safebox.utils.Province"/>
         <activity android:name="com.lsj.safebox.utils.City"/>
         <activity android:name="com.lsj.safebox.ui.Time_set"/>
-        
-        <!-- 拦截规则 结束 -->
         
         <receiver android:name="com.lsj.safebox.receiver.BootCompleteReceiver" >
             <intent-filter>
@@ -81,16 +101,29 @@
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
         </receiver>
-        <receiver
-            android:name=".receiver.Admin"
+        <receiver android:name=".receiver.Admin"
             android:description="@string/sample_device_admin_description"
             android:label="@string/sample_device_admin"
             android:permission="android.permission.BIND_DEVICE_ADMIN" >
-
             <intent-filter>
                 <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
             </intent-filter>
         </receiver>
+        <receiver android:name="com.lsj.safebox.receiver.MyAppWidget">
+            <intent-filter >
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data 
+                android:name="android.appwidget.provider"
+                android:resource="@xml/example_appwidget_info"/>
+        </receiver>
+        <receiver android:name="com.lsj.safebox.receiver.AutoKillProcessReceiver">
+            <intent-filter>
+                <action android:name="com.lsj.safebox.killprocess"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        
         
 
         <!-- 软件管理 开始 -->
@@ -142,10 +175,14 @@
             android:value=".SearchActivity" />
         <!-- 软件管理 结束 -->
 
-        <service android:name=".FTPServerService" />
-        <service android:name=".service.LocationService" />
+        <service android:name="com.lsj.safebox.service.FTPServerService" />
+        <service android:name="com.lsj.safebox.service.service.LocationService" />
         <service android:name="com.lsj.safebox.service.AddressService" />
         <service android:name="com.lsj.safebox.service.BlankNumService" />
+        <service android:name="com.lsj.safebox.service.KillProcessService"/>
+        <service android:name="com.lsj.safebox.service.UpdateAppWidgetService"/>
+        <service android:name="com.lsj.safebox.service.MonitorSerivce"/>
+        
     </application>
 
 </manifest>

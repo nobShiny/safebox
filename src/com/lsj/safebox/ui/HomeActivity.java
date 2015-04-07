@@ -73,28 +73,30 @@ public class HomeActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.ll_shoujifangdao://进入手机防盗功能
-			Toast.makeText(this, "手机防盗", 0).show();
+			
 			break;
 		case R.id.ll_anquantongxun://进入安全通讯功能
 			intent = new Intent(HomeActivity.this,SecureCommActivity.class);
 			startActivity(intent);
 			break;
 		case R.id.ll_xitongyouhua://进入系统优化功能
-			
+			intent = new Intent(HomeActivity.this,SystemOptActivityView.class);
+			startActivity(intent);
 			break;
 		case R.id.ll_ruanjianguanli://进入软件管理功能
 			intent = new Intent(HomeActivity.this,SoftwareManagerViewActivity.class);
 			startActivity(intent);
 			break;
-
 		case R.id.ll_shangwangguanli://进入上网管理功能
 			
 			break;
-		case R.id.ll_anquanyisheng://进入安全医生功能
-			
+		case R.id.ll_anquanyisheng://进入隐私保护功能
+			intent = new Intent(HomeActivity.this,PrivacyViewActivity.class);
+			startActivity(intent);
 			break;
 		case R.id.ll_fangyuweishi://进入防御卫士功能
-			
+			intent = new Intent(HomeActivity.this, AntiVirusActivity.class);
+			startActivity(intent);
 			break;
 		case R.id.ll_shezhizhongxin://进入设置中心
 			intent = new Intent(HomeActivity.this,SettingActivity.class);

@@ -15,6 +15,7 @@ import org.json.JSONObject;
 
 import com.lsj.safebox.R;
 import com.lsj.safebox.service.AddressService;
+import com.lsj.safebox.service.UpdateAppWidgetService;
 import com.lsj.safebox.utils.StreamTools;
 
 import android.app.Activity;
@@ -63,15 +64,21 @@ public class Splash_MainActivity extends Activity {
 		aa.setDuration(1500);
 		findViewById(R.id.container).startAnimation(aa);
 		
-		copyAddressDb();
+//		//启动widget服务
+//		Intent intent = new Intent(this, UpdateAppWidgetService.class);
+//		startService(intent);
+		
+		//加载相关数据库文件
+		copyAddressDb("address.db");
+		copyAddressDb("antivirus.db");
 		
 	}
 	
 	/**
 	 * 复制相关数据库
 	 */
-	private void copyAddressDb() {
-		File file = new File(getFilesDir(),"address.db");
+	private void copyAddressDb(String DB) {
+		File file = new File(getFilesDir(),DB);
 		if(!(file.exists())){
 			InputStream is=null;
 			FileOutputStream fos=null;

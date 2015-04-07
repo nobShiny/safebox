@@ -17,7 +17,7 @@ import android.widget.MultiAutoCompleteTextView;
 
 
 /**
- * 本类功能为从SD卡读取。txt文档上的地址
+ * 从SD卡读取txt文档上的地址
  * @author Administrator
  *
  */
@@ -78,6 +78,8 @@ public class Region_djust {
       list.add("天津");
       list.add("重庆");
     }
+    
+    
     /*  android与Window系统编码形式不同需转码*/
     private static String convertCodeAndGetText(String str_filepath) {// 转码
 
@@ -85,8 +87,6 @@ public class Region_djust {
         BufferedReader reader;
         String text = "";
         try {
-                // FileReader f_reader = new FileReader(file);
-                // BufferedReader reader = new BufferedReader(f_reader);
                 FileInputStream fis = new FileInputStream(file);
                 BufferedInputStream in = new BufferedInputStream(fis);
                 in.mark(4);

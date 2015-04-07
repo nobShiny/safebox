@@ -77,7 +77,8 @@ public class Trule extends Activity {
 	}
 
 	public void Onclik() {
-		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {// 选择地区拦截模式如只拦截摸个地区或只接听
+		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+			// 选择地区拦截模式如只拦截某个地区或只接听
 
 			@Override
 			public void onItemSelected(AdapterView<?> arg0, View arg1,

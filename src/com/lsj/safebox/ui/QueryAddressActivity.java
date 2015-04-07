@@ -23,7 +23,7 @@ public class QueryAddressActivity extends Activity {
 	private EditText et_phonenum;
 	private TextView tv_address;
 	private Address addressDao;
-	Button btn_return;
+	private Button btn_return;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
