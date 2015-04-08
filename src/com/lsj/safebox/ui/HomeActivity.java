@@ -95,7 +95,7 @@ public class HomeActivity extends Activity implements OnClickListener {
 			startActivity(intent);
 			break;
 		case R.id.ll_fangyuweishi://进入防御卫士功能
-			intent = new Intent(HomeActivity.this, AntiVirusActivity.class);
+			intent = new Intent(HomeActivity.this, DefenseActivityView.class);
 			startActivity(intent);
 			break;
 		case R.id.ll_shezhizhongxin://进入设置中心

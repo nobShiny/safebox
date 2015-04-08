@@ -17,12 +17,12 @@ import android.widget.RelativeLayout;
  */
 public class DefenseActivityView extends Activity implements OnClickListener{
 	
-	Button main_back;
+	private Button main_back;
 	private RelativeLayout killVirus;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_system_opt);
+		setContentView(R.layout.activity_defense);
 		
 		main_back = (Button) findViewById(R.id.main_back);
 		killVirus = (RelativeLayout) findViewById(R.id.btn_bingduchasha);

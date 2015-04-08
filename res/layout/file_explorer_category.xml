@@ -30,7 +30,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ellipsize="start"
-                        android:paddingLeft="10dip"
                         android:singleLine="true"
                         style="?android:attr/textAppearanceMedium"/>
                 </LinearLayout>
@@ -231,11 +230,11 @@
                         android:drawableLeft="@drawable/sd_card_available_icon" />
                 </LinearLayout>
 
-                <net.micode.fileexplorer.CategoryBar
+                <com.lsj.safebox.custom.ui.CategoryBar
                     android:id="@+id/category_bar" android:layout_width="fill_parent"
                     android:layout_height="35px" android:layout_gravity="center"
                     android:layout_marginBottom="5dip">
-                </net.micode.fileexplorer.CategoryBar>
+                </com.lsj.safebox.custom.ui.CategoryBar>
 
                 <LinearLayout android:layout_width="fill_parent"
                     android:orientation="vertical"

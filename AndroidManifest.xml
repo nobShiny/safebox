@@ -6,7 +6,7 @@
     android:installLocation="auto" >
 
     <uses-sdk
-        android:minSdkVersion="10"
+        android:minSdkVersion="14"
         android:targetSdkVersion="17" />
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -39,9 +39,11 @@
         android:allowBackup="true"
         android:icon="@drawable/safebox_logo"
         android:label="@string/safebox"
-        android:theme="@style/AppTheme" >
+        android:uiOptions="splitActionBarWhenNarrow"
+        android:theme="@style/AppTheme">
         <activity
             android:name="com.lsj.safebox.ui.Splash_MainActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -50,46 +52,100 @@
             </intent-filter>
         </activity>
         <activity android:name="com.lsj.safebox.ui.HomeActivity" 
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"
             android:configChanges="keyboardHidden|screenSize|orientation">
             
          </activity>   
-        <activity android:name="com.lsj.safebox.ui.SettingActivity" />
-        <activity android:name="com.lsj.safebox.ui.SecurityActivity" />
-        <activity android:name="com.lsj.safebox.ui.SecurityActivity_setup_one" />
-        <activity android:name="com.lsj.safebox.ui.SecureCommActivity" />
-        <activity android:name="com.lsj.safebox.ui.QueryAddressActivity" />
+        <activity android:name="com.lsj.safebox.ui.SettingActivity" 
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"/>
+        <activity android:name="com.lsj.safebox.ui.SecurityActivity" 
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"/>
+        <activity android:name="com.lsj.safebox.ui.SecurityActivity_setup_one" 
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"/>
+        <activity android:name="com.lsj.safebox.ui.SecureCommActivity" 
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"/>
+        <activity android:name="com.lsj.safebox.ui.QueryAddressActivity" 
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"/>
         <activity android:name="com.lsj.safebox.ui.DragViewActivty"
             	  android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
-        <activity android:name="com.lsj.safebox.ui.CallSmsSafeActivity"/>
-        <activity android:name="com.lsj.safebox.ui.SoftwareManagerViewActivity"/>
-        <activity android:name="com.lsj.safebox.ui.BlockingRuleViewActivity"/>
-        <activity android:name="com.lsj.safebox.ui.SoftManagerActivity"/>
+        <activity android:name="com.lsj.safebox.ui.CallSmsSafeActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"/>
+        <activity android:name="com.lsj.safebox.ui.SoftwareManagerViewActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"/>
+            
+        <activity
+            android:name="com.lsj.safebox.ui.FileExporerTabActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="sensor"
+            android:uiOptions="splitActionBarWhenNarrow">
+            <intent-filter >
+                <action android:name="android.intent.action.PICK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <action android:name="android.intent.action.MEDIA_UNMOUNTED" />
+
+                <data android:scheme="file" />
+            </intent-filter>
+            <intent-filter >
+                <action android:name="android.intent.action.GET_CONTENT" />
+
+                <category android:name="android.intent.category.OPENABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="*/*" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="com.lsj.safebox.ui.BlockingRuleViewActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"/>
+        <activity android:name="com.lsj.safebox.ui.SoftManagerActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"/>
         <activity android:name="com.lsj.safebox.ui.SmsBackupActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"
             	  android:configChanges="keyboardHidden|screenSize|orientation"/>
-        <activity android:name=".ui.AntiVirusActivity"
+        <activity android:name="com.lsj.safebox.ui.AntiVirusActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"
             	  android:configChanges="keyboardHidden|screenSize|orientation"/>
         <activity android:name="com.lsj.safebox.ui.SystemOptActivityView"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"
                   android:configChanges="keyboardHidden|screenSize|orientation"/>
         <activity android:name="com.lsj.safebox.ui.TaskManagerActivity"
-                  android:configChanges="keyboardHidden|screenSize|orientation"/>
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+                  android:configChanges="keyboardHidden|screenSize|orientation"
+                  />
         <activity android:name="com.lsj.safebox.ui.TaskManagerSettingActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"
                   android:configChanges="keyboardHidden|screenSize|orientation"/>
         <activity android:name="com.lsj.safebox.ui.DefenseActivityView"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"
                   android:configChanges="keyboardHidden|screenSize|orientation"/>
-        <activity android:name="com.lsj.safebox.receiver.MyAppWidget"/>
-        <activity android:name="com.lsj.safebox.ui.PrivacyViewActivity"/>
-        <activity android:name="com.lsj.safebox.ui.AppLockActivity"/>
+        <activity android:name="com.lsj.safebox.receiver.MyAppWidget"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"/>
+        <activity android:name="com.lsj.safebox.ui.PrivacyViewActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"/>
+        <activity android:name="com.lsj.safebox.ui.AppLockActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"/>
         <activity android:name="com.lsj.safebox.ui.EnterPwdActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"
             android:excludeFromRecents="true"
             android:launchMode="singleTask"/>
-            
+        <activity android:name="com.lsj.safebox.ui.CleanCacheActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+            android:configChanges="keyboardHidden|screenSize|orientation"/>
+        <activity android:name="com.lsj.safebox.ui.Stranger_set"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"/>
+        <activity android:name="com.lsj.safebox.ui.Trule"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"/>
+        <activity android:name="com.lsj.safebox.utils.Province"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"/>
+        <activity android:name="com.lsj.safebox.utils.City"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"/>
+        <activity android:name="com.lsj.safebox.ui.Time_set"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"/>
         
         
-        <activity android:name="com.lsj.safebox.ui.Stranger_set"/>
-        <activity android:name="com.lsj.safebox.ui.Trule"/>
-        <activity android:name="com.lsj.safebox.utils.Province"/>
-        <activity android:name="com.lsj.safebox.utils.City"/>
-        <activity android:name="com.lsj.safebox.ui.Time_set"/>
         
         <receiver android:name="com.lsj.safebox.receiver.BootCompleteReceiver" >
             <intent-filter>
@@ -127,31 +183,9 @@
         
 
         <!-- 软件管理 开始 -->
-        <activity
-            android:name="com.lsj.safebox.ui.FileExporerTabActivity"
-            android:configChanges="screenSize|keyboardHidden"
-            android:uiOptions="splitActionBarWhenNarrow" >
-            <intent-filter>
-                <action android:name="android.intent.action.PICK" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <action android:name="android.intent.action.MEDIA_MOUNTED" />
-                <action android:name="android.intent.action.MEDIA_UNMOUNTED" />
-
-                <data android:scheme="file" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.GET_CONTENT" />
-
-                <category android:name="android.intent.category.OPENABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:mimeType="*/*" />
-            </intent-filter>
-        </activity>
+         
         
-        <activity android:name=".net.micode.fileexplorer.SearchActivity" >
+        <activity android:name="com.lsj.safebox.ui.SearchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
 
@@ -166,9 +200,7 @@
         <activity
             android:name="com.lsj.safebox.ui.FileExplorerPreferenceActivity"
             android:label="@string/menu_setting"
-            android:launchMode="singleTop"
-            >
-            <!-- android:theme="@android:style/Theme.Holo.Light.NoActionBar" -->
+            android:launchMode="singleTop">
         </activity>
         <meta-data
             android:name="android.app.default_searchable"
