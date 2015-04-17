@@ -24,6 +24,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -35,7 +36,7 @@ public class HomeActivity extends Activity implements OnClickListener {
 						 ll_shangwangguanli,ll_anquanyisheng,
 						 ll_fangyuweishi,ll_shezhizhongxin;
 	
-	
+	private ImageView icon_about,icon_contact,icon_support;
 	private Intent intent;
 	
 	
@@ -53,6 +54,9 @@ public class HomeActivity extends Activity implements OnClickListener {
 		ll_anquanyisheng = (LinearLayout) findViewById(R.id.ll_anquanyisheng);
 		ll_fangyuweishi = (LinearLayout) findViewById(R.id.ll_fangyuweishi);
 		ll_shezhizhongxin = (LinearLayout) findViewById(R.id.ll_shezhizhongxin);
+		icon_about = (ImageView) findViewById(R.id.icon_about);
+		icon_contact = (ImageView) findViewById(R.id.icon_contact);
+		icon_support = (ImageView) findViewById(R.id.icon_support);
 		
 		
 		ll_shoujifangdao.setOnClickListener(this);
@@ -63,6 +67,10 @@ public class HomeActivity extends Activity implements OnClickListener {
 		ll_anquanyisheng.setOnClickListener(this);
 		ll_fangyuweishi.setOnClickListener(this);
 		ll_shezhizhongxin.setOnClickListener(this);
+		
+		icon_about.setOnClickListener(this);
+		icon_contact.setOnClickListener(this);
+		icon_support.setOnClickListener(this);
 	}
 
 	
@@ -73,7 +81,8 @@ public class HomeActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.ll_shoujifangdao://进入手机防盗功能
-			
+			intent = new Intent(HomeActivity.this,SecureCommActivity.class);
+			startActivity(intent);
 			break;
 		case R.id.ll_anquantongxun://进入安全通讯功能
 			intent = new Intent(HomeActivity.this,SecureCommActivity.class);
@@ -102,44 +111,22 @@ public class HomeActivity extends Activity implements OnClickListener {
 			intent = new Intent(HomeActivity.this,SettingActivity.class);
 			startActivity(intent);
 			break;
+		case R.id.icon_about://进入作者介绍
+			intent = new Intent(HomeActivity.this,AboutActivity.class);
+			startActivity(intent);
+			break;
+		case R.id.icon_contact://进入联系我们
+			intent = new Intent(HomeActivity.this,ContactActivity.class);
+			startActivity(intent);
+			break;
+		case R.id.icon_support://进入支持一下
+			intent = new Intent(HomeActivity.this,SupportActivity.class);
+			startActivity(intent);
+			break;
+			
 		}
 	}
-	
-	
-//	private class MyAdapter extends BaseAdapter {
-//
-//		/**
-//		 * 返回ListView某一行的view对象
-//		 */
-//		@Override
-//		public View getView(int position, View convertView, ViewGroup parent) {
-//			// TODO Auto-generated method stub
-//			return null;
-//		}
-//
-//		/**
-//		 * 控件总数
-//		 */
-//		@Override
-//		public int getCount() {
-//			// TODO Auto-generated method stub
-//			return names.length;
-//		}
-//
-//		/**
-//		 * 返回点击的对象
-//		 */
-//		@Override
-//		public Object getItem(int position) {
-//			// TODO Auto-generated method stub
-//			return null;
-//		}
-//
-//		@Override
-//		public long getItemId(int position) {
-//			return id;
-//		}
-//	}
+		
 
 	/**
 	 * 此方法用于判断手机防盗功能是否已经设置过密码
@@ -349,7 +336,6 @@ public class HomeActivity extends Activity implements OnClickListener {
 	    		else
 	    		{
 	                  finish();
-	                  //System.exit(0);
 	            }
 	        }
 	        return false;

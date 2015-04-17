@@ -13,9 +13,9 @@
     <string name="safedoctor">隐私保护</string>
     <string name="fangyuweishi">防御卫士</string>
     <string name="setting">设置中心</string>
-    
     <string name="sample_device_admin_description">激活后可以远程锁屏,远程擦除数据</string>
     <string name="sample_device_admin">手机卫士</string>
+    
     
     <!-- 拦截规则 开始 -->
      <string name="srecord_delete">清空拦截记录</string>
@@ -150,7 +150,10 @@
     <string name="pref_show_real_path">Display real path</string>
     <string name="default_primary_folder">/mnt/sdcard</string>
     <string name="pref_show_real_path_summary">Show real path in navigation bar</string>
-
-    <!-- 文件管理器  结束 -->
+    
+    <string name="about_title">关于手机安全盒子</string>
+	<string name="about_content">手机安全盒子是一款手机安全客户端\n</string>
+	<string name="about_website">Website:http://www.cnblogs.com/jiajia-bird/</string>
+	<string name="about_email">Email:jiajiaby84@gmail.com</string>
 
 </resources>
