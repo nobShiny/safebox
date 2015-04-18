@@ -145,7 +145,14 @@
         <activity android:name="com.lsj.safebox.ui.Time_set"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar"/>
         
+        <!-- 权限医生 开始 -->
         
+        <activity android:name="com.lsj.safebox.ui.DoctorPermissionViewActivity"/>
+        <activity android:name="com.lsj.safebox.ui.PermissionDoctorActivity"/>
+        <activity android:name="com.lsj.safebox.ui.PermissionFirst"/>
+        <activity android:name="com.lsj.safebox.ui.PermissionSecond"/>
+        <activity android:name="com.lsj.safebox.ui.Drawable"/>
+        <!-- 权限医生 结束 -->
         
         <receiver android:name="com.lsj.safebox.receiver.BootCompleteReceiver" >
             <intent-filter>
@@ -214,7 +221,7 @@
         <service android:name="com.lsj.safebox.service.KillProcessService"/>
         <service android:name="com.lsj.safebox.service.UpdateAppWidgetService"/>
         <service android:name="com.lsj.safebox.service.MonitorSerivce"/>
-        
+        <service android:name="com.lsj.safebox.service.FTDservice"/>
     </application>
 
 </manifest>

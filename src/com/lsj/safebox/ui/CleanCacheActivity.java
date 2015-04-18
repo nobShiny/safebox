@@ -63,15 +63,12 @@ public class CleanCacheActivity extends Activity {
 				break;
 			case SHOW_CACHE_INFO:
 				
-
 				final CacheInfo cacheInfo = (CacheInfo) msg.obj;
 				View view = View.inflate(CleanCacheActivity.this, R.layout.list_cache_item, null);
 				ImageView iv_icon = (ImageView) view.findViewById(R.id.iv_icon);
 				TextView tv_name = (TextView) view.findViewById(R.id.tv_name);
 				TextView tv_cache_info = (TextView) view.findViewById(R.id.tv_cache_info);
 				ImageView iv_delete = (ImageView) view.findViewById(R.id.iv_delete);
-				
-				
 				
 				iv_icon.setImageDrawable(cacheInfo.icon);
 				tv_name.setText(cacheInfo.name);

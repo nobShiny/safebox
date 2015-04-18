@@ -96,8 +96,9 @@ public class HomeActivity extends Activity implements OnClickListener {
 			intent = new Intent(HomeActivity.this,SoftwareManagerViewActivity.class);
 			startActivity(intent);
 			break;
-		case R.id.ll_shangwangguanli://进入上网管理功能
-			
+		case R.id.ll_shangwangguanli://进入权限医生功能
+			intent = new Intent(HomeActivity.this,DoctorPermissionViewActivity.class);
+			startActivity(intent);
 			break;
 		case R.id.ll_anquanyisheng://进入隐私保护功能
 			intent = new Intent(HomeActivity.this,PrivacyViewActivity.class);
