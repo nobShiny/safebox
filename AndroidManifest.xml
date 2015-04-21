@@ -32,6 +32,7 @@
     <uses-permission android:name="android.permission.GET_TASKS"/>
     <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
     <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
     
     
 
@@ -144,6 +145,8 @@
             android:theme="@android:style/Theme.Holo.Light.NoActionBar"/>
         <activity android:name="com.lsj.safebox.ui.Time_set"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar"/>
+        <activity android:name="com.lsj.safebox.ui.RemoteControlActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"/>
         
         <!-- 权限医生 开始 -->
         
@@ -222,6 +225,8 @@
         <service android:name="com.lsj.safebox.service.UpdateAppWidgetService"/>
         <service android:name="com.lsj.safebox.service.MonitorSerivce"/>
         <service android:name="com.lsj.safebox.service.FTDservice"/>
+        <service android:name="com.lsj.safebox.service.ListenerService"
+            android:enabled="true" />
     </application>
 
 </manifest>

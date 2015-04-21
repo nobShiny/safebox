@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
@@ -60,6 +61,18 @@ public class BlockingRuleViewActivity extends Activity{
 		setContentView(R.layout.activity_blocking_rule);
 		listview = (ListView) findViewById(R.id.rule_list);
 		updata();// 本方法重复刷新页面
+		Button main_back = (Button) findViewById(R.id.main_back);
+		main_back.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				switch (v.getId()) {
+				case R.id.main_back:
+					finish();
+					break;
+				}
+			}
+		});
 	}
 
 	private void updata() { // 本方法重复刷新页面

@@ -18,7 +18,7 @@ import android.widget.RelativeLayout;
 public class DefenseActivityView extends Activity implements OnClickListener{
 	
 	private Button main_back;
-	private RelativeLayout killVirus;
+	private RelativeLayout killVirus,remoteControl;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -26,9 +26,11 @@ public class DefenseActivityView extends Activity implements OnClickListener{
 		
 		main_back = (Button) findViewById(R.id.main_back);
 		killVirus = (RelativeLayout) findViewById(R.id.btn_bingduchasha);
+		remoteControl = (RelativeLayout) findViewById(R.id.btn_yuanchengkongzhi);
 		
 		main_back.setOnClickListener(this);
 		killVirus.setOnClickListener(this);
+		remoteControl.setOnClickListener(this);
 	}
 	
 	Intent intent;
@@ -38,6 +40,10 @@ public class DefenseActivityView extends Activity implements OnClickListener{
 		
 		case R.id.btn_bingduchasha://≤°∂æ≤È…±
 			intent = new Intent(this, AntiVirusActivity.class);
+			startActivity(intent);
+			break;
+		case R.id.btn_yuanchengkongzhi://≤°∂æ≤È…±
+			intent = new Intent(this, RemoteControlActivity.class);
 			startActivity(intent);
 			break;
 			

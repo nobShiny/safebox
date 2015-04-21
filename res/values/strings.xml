@@ -15,13 +15,12 @@
     <string name="setting">设置中心</string>
     <string name="sample_device_admin_description">激活后可以远程锁屏,远程擦除数据</string>
     <string name="sample_device_admin">手机卫士</string>
-    
-    
+
     <!-- 拦截规则 开始 -->
-     <string name="srecord_delete">清空拦截记录</string>
+    <string name="srecord_delete">清空拦截记录</string>
     <string name="quit">退出</string>
     <string name="input">请输入</string>
-     <string name="inputname">请输入联系人姓名</string>
+    <string name="inputname">请输入联系人姓名</string>
     <string name="inputnumber">请输联系人入号码</string>
     <string name="mast">高级设置</string>
     <string name="timeinstrall">时间设置</string>
@@ -29,7 +28,7 @@
     <string name="smsfrequency">陌生号码多少次数后发送短信</string>
     <string name="phonefrequency">陌生号码多少次数后接听</string>
     <string name="timespan">拦截时间段设置</string>
-     <string name="drop">退出</string>
+    <string name="drop">退出</string>
     <string name="drophei">清空黑名单</string>
     <string name="dropbai">清空白名单</string>
     <string name="addbook">更新通讯录</string>
@@ -45,11 +44,10 @@
     <string name="setting_yunku">云库管理</string>
     <string name="setting_manager_local">地区拦截管理</string>
     <string name="sprovince">选择地区</string>
-    
-    
-	<!-- 拦截规则 结束 -->
-	
-	
+
+    <!-- 拦截规则 结束 -->
+
+
     <!-- 文件管理器  开始 -->
     <string name="added_favorite">Added to Favorites</string>
     <string name="cancel">Cancel</string>
@@ -101,14 +99,16 @@
     <string name="operation_create_folder_message">Enter folder name</string>
     <string name="operation_delete">Delete</string>
     <string name="operation_delete_confirm_message">Confirm Deletion?</string>
-    <string name="operation_deleting">Deleting...</string>
     <string name="operation_favorite">Add to Favorites</string>
     <string name="operation_hide_sys">Hide hidden files</string>
     <string name="operation_info">Details</string>
     <string name="operation_move">Move</string>
-    <string name="operation_moving">Moving...</string>
-    <string name="operation_paste">Paste</string>
+    <!--
+    <string name="operation_deleting">Deleting...</string>
     <string name="operation_pasting">Pasting...</string>
+    <string name="operation_moving">Moving...</string>
+    -->
+    <string name="operation_paste">Paste</string>
     <string name="operation_refresh">Refresh</string>
     <string name="operation_rename">Rename</string>
     <string name="operation_rename_message">Enter a new name</string>
@@ -150,10 +150,35 @@
     <string name="pref_show_real_path">Display real path</string>
     <string name="default_primary_folder">/mnt/sdcard</string>
     <string name="pref_show_real_path_summary">Show real path in navigation bar</string>
-    
+    <string name="label01">请输入主控手机号码：</string>
+    <string name="label02">请选择监控类型：</string>
+    <string name="label03">短信监控</string>
+    <string name="label04">来电监控</string>
+    <string name="label05">位置监控</string>
+    <string name="label06">回电监控</string>
+    <string name="label07">开启监控</string>
+    <string name="label08">结束监控</string>
+    <string name="label09">控制振动</string>
+    <string name="label10">控制铃音</string>
+
+    <style name="textview">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_marginLeft">40dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="checkbox">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">42dp</item>
+        <item name="android:button">@drawable/btn_check</item>
+    </style>
+
     <string name="about_title">关于手机安全盒子</string>
-	<string name="about_content">手机安全盒子是一款手机安全客户端\n</string>
-	<string name="about_website">Website:http://www.cnblogs.com/jiajia-bird/</string>
-	<string name="about_email">Email:jiajiaby84@gmail.com</string>
+    <string name="about_content">手机安全盒子是一款手机安全客户端\n</string>
+    <string name="about_website">Website:http://www.cnblogs.com/jiajia-bird/</string>
+    <string name="about_email">Email:jiajiaby84@gmail.com</string>
 
 </resources>
