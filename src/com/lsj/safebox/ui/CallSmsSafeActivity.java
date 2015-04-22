@@ -37,6 +37,7 @@ public class CallSmsSafeActivity extends Activity {
 	private List<BlankNumInfo> blanknums;
 	private AlertDialog dialog;
 	private ProgressBar pb_process;
+	private Button btn_return;
 	public static final int MAX_NUM = 20;
 	int startIndex = 0;
 
@@ -44,6 +45,18 @@ public class CallSmsSafeActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_callsms_safe);
+		btn_return = (Button) findViewById(R.id.main_back);
+		btn_return.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				switch (v.getId()) {
+				case R.id.main_back:
+					finish();
+					break;
+				}
+			}
+		});
 		pb_process = (ProgressBar) findViewById(R.id.pb_process);
 		lv_call_sms = (ListView) findViewById(R.id.lv_call_sms);
 		dao = new BlankNum(getApplicationContext());

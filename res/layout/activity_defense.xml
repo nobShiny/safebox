@@ -102,7 +102,7 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="10dp"
-            android:text="病毒查杀" />
+            android:text="远程控制" />
 
         <RelativeLayout
             android:id="@+id/btn_yuanchengkongzhi"
@@ -119,7 +119,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="7dp"
-                android:text="病毒查杀"
+                android:text="远程控制"
                 android:textColor="#000000"
                 android:textSize="15sp" />
 
@@ -131,7 +131,7 @@
                 android:layout_marginBottom="100dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="扫描手机内的病毒"
+                android:text="通过远程指令来控制手机行为"
                 android:textColor="#000000"
                 android:textSize="11sp" />
 

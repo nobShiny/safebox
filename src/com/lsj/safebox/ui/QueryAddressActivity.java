@@ -23,13 +23,12 @@ public class QueryAddressActivity extends Activity {
 	private EditText et_phonenum;
 	private TextView tv_address;
 	private Address addressDao;
-	private Button btn_return;
+	private Button btn_return,btn_clear;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_query_address);
-
 		// ·µ»Ø°´Å¥
 		btn_return = (Button) findViewById(R.id.main_back);
 		btn_return.setOnClickListener(new OnClickListener() {
@@ -73,6 +72,18 @@ public class QueryAddressActivity extends Activity {
 			@Override
 			public void afterTextChanged(Editable s) {
 
+			}
+		});
+		btn_clear = (Button) findViewById(R.id.qingkong);
+		btn_clear.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				switch (v.getId()) {
+				case R.id.qingkong:
+					et_phonenum.setText("");
+					break;
+				}
 			}
 		});
 	}
