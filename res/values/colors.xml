@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="rippelColor">#FFFFFF</color>
+    <color name="rippelColor2">#ff2f9b34</color>
+    <color name="rippelColor3">#ff46b451</color>
+    <color name="white">#ff46b451</color>
+    <color name="grey_normal">#ff8a837c</color>
     <color name="graywhite">#F5F5F5</color>
     <color name="head_text">#0e5986</color>
     <color name="author_text">#0e5986</color>
-    <color name="white">#ffffff</color>
     <color name="wwhite">#FFFAFA</color>
     <color name="textColorPrimary">#ffffffff</color>
     <color name="textColorPrimaryDark">#ff000000</color>

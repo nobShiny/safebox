@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ripple="http://schemas.android.com/apk/res/com.lsj.safebox"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/rootblock_default_bg"
@@ -8,15 +9,15 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
-        android:layout_weight="1"
         android:layout_marginLeft="15dp"
+        android:layout_weight="1"
         android:orientation="vertical" >
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" 
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
 
             <LinearLayout
                 android:id="@+id/ll_shoujifangdao"
@@ -98,7 +99,6 @@
                     android:textColor="#ffffff" />
             </LinearLayout>
 
-            
             <LinearLayout
                 android:id="@+id/ll_ruanjianguanli"
                 android:layout_width="108dp"
@@ -266,26 +266,38 @@
                 android:layout_alignParentBottom="true"
                 android:orientation="vertical" >
 
-                <ImageView
-                    android:id="@+id/icon_support"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:layout_marginTop="20dp"
-                    android:src="@drawable/rootblock_icon_update" />
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
 
-                <ImageView
-                    android:id="@+id/icon_contact"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:layout_marginTop="20dp"
-                    android:src="@drawable/rootblock_icon_fankui" />
+                    <com.lsj.safebox.custom.ui.RippleLayout
+                        android:id="@+id/more2"
+                        android:layout_width="90dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="bottom|center"
+                        android:alpha="0.9"
+                        ripple:rv_color="@color/rippelColor3"
+                        ripple:rv_inner_radius="@dimen/bookshelf_add_btn" >
 
-                <ImageView
-                    android:id="@+id/icon_about"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:layout_marginTop="20dp"
-                    android:src="@drawable/rootblock_icon_about" />
+                        <ImageButton
+                            android:id="@+id/add"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/selector_green_ball"
+                            android:contentDescription="@null"
+                            android:scaleType="center"
+                            android:src="@drawable/ic_add" />
+                    </com.lsj.safebox.custom.ui.RippleLayout>
+
+                    <com.lsj.safebox.custom.ui.ImportMenuView
+                        android:id="@+id/main_activity_import_menu"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="bottom|center">
+                    </com.lsj.safebox.custom.ui.ImportMenuView>
+                </FrameLayout>
             </LinearLayout>
         </RelativeLayout>
     </LinearLayout>

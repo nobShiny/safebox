@@ -4,4 +4,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <dimen name="bookshelf_add_btn">30.0dp</dimen>
+    <dimen name="bookshelf_scanner_btn">40.0dp</dimen>
+
 </resources>

@@ -51,10 +51,6 @@ public class AntiVirusActivity extends Activity {
 					tv.setText("ɨ�谲ȫ:"+info.name);
 				}
 				ll_container.addView(tv, 0);
-				
-				
-				
-				
 				break;
 
 			case SCANING_FiNISH:
