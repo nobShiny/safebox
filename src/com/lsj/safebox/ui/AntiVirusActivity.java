@@ -110,14 +110,12 @@ public class AntiVirusActivity extends Activity {
 		progressBar1 = (ProgressBar) findViewById(R.id.progressBar1);
 		ll_container = (LinearLayout) findViewById(R.id.ll_container);
 
-		RotateAnimation ra = new RotateAnimation(0, 360,
-				Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF,
-				0.5f);
+		RotateAnimation ra = new RotateAnimation(0,360,80,80);
 		ra.setRepeatCount(RotateAnimation.INFINITE);
-		ra.setDuration(1000);
+		ra.setDuration(3000);
 		iv_scanning.startAnimation(ra);
 
-		tv_status.setText("杀毒8引擎正在初始化...");
+		tv_status.setText("杀毒引擎正在初始化...");
 		antiVirusList = new ArrayList<AntiVirusActivity.ScanInfo>();
 		new Thread() {
 			public void run() {

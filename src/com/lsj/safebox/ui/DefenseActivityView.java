@@ -42,7 +42,7 @@ public class DefenseActivityView extends Activity implements OnClickListener{
 			intent = new Intent(this, AntiVirusActivity.class);
 			startActivity(intent);
 			break;
-		case R.id.btn_yuanchengkongzhi://²¡¶¾²éÉ±
+		case R.id.btn_yuanchengkongzhi://Ô¶³Ì¿ØÖÆ
 			intent = new Intent(this, RemoteControlActivity.class);
 			startActivity(intent);
 			break;

@@ -69,44 +69,45 @@ public class Splash_MainActivity extends Activity {
 //		startService(intent);
 		
 		//加载相关数据库文件
-		copyAddressDb("address.db");
-		copyAddressDb("antivirus.db");
+		copyDB("address.db");
+		copyDB("antivirus.db");
 		
 	}
 	
 	/**
 	 * 复制相关数据库
 	 */
-	private void copyAddressDb(String DB) {
-		File file = new File(getFilesDir(),DB);
-		if(!(file.exists())){
-			InputStream is=null;
-			FileOutputStream fos=null;
-			AssetManager assets = getAssets();
+	private void copyDB(String dbname) {
+		InputStream is = null;
+		FileOutputStream fos = null;
+		File file = new File(getFilesDir(), dbname);
+		if(file.exists()){
+			System.out.println("数据库已经存在不需要拷贝");
+		}else{
 			try {
-				is = assets.open("address.db");
-				fos=new FileOutputStream(file);
-				byte[] b=new byte[1024*4];
-				int len=-1;
-				while((len=is.read(b))!=-1){
-					fos.write(b, 0, len);
+				is = getAssets().open(dbname);
+			
+				fos = new FileOutputStream(file);
+				int len = 0;
+				byte[] buffer = new byte[1024];
+				while ((len = is.read(buffer)) != -1) {
+					fos.write(buffer, 0, len);
 				}
+
 			} catch (IOException e) {
 				e.printStackTrace();
-			}finally{
+			} finally {
 				try {
 					is.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-				try {
 					fos.close();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
+
 			}
 
 		}
+		
 	}
 	
 	
