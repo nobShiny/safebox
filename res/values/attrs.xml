@@ -27,4 +27,9 @@
         <attr name="rv_inner_margin_radius" format="dimension"></attr>
     </declare-styleable>
 
+     <declare-styleable name="Emojicon">
+        <attr name="emojiconSize" format="dimension"/>
+        <attr name="emojiconTextStart" format="integer"/>
+        <attr name="emojiconTextLength" format="integer"/>
+    </declare-styleable>
 </resources>
