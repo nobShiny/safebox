@@ -133,7 +133,7 @@ public class Splash_MainActivity extends Activity {
 				enterHome();
 				break;
 			case NETWORK_ERROR:// 网络连接错误
-				Toast.makeText(getApplicationContext(), "网络连接错误,请稍后再试", 0).show();
+//				Toast.makeText(getApplicationContext(), "网络连接错误,请稍后再试", 0).show();
 				enterHome();
 				break;
 			case JSON_ERROR:// json解析出错

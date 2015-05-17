@@ -129,6 +129,7 @@ public class HomeActivity extends Activity implements OnClickListener {
 		case R.id.ll_shoujifangdao:// 进入手机防盗功能
 			// intent = new Intent(HomeActivity.this,.class);
 			// startActivity(intent);
+			showLostFindDialog();
 			Toast.makeText(getApplicationContext(), "手机防盗", 0).show();
 			break;
 		case R.id.ll_anquantongxun:// 进入安全通讯功能
@@ -176,21 +177,7 @@ public class HomeActivity extends Activity implements OnClickListener {
 
 		}
 	}
-
-	/**
-	 * 此方法用于判断手机防盗功能是否已经设置过密码
-	 */
-	private boolean isSetupPwd() {
-		String password = sp.getString("password", null);
-		// 判断密码是否存在
-		// if(TextUtils.isEmpty(password)){
-		// return false;
-		// }else{
-		// return true;
-		// }
-		return !TextUtils.isEmpty(password);
-	}
-
+	
 	/**
 	 * 手机防盗功能对话框的显示
 	 */
@@ -205,6 +192,21 @@ public class HomeActivity extends Activity implements OnClickListener {
 
 	}
 
+	/**
+	 * 此方法用于判断手机防盗功能是否已经设置过密码
+	 */
+	private boolean isSetupPwd() {
+		String password = sp.getString("password", null);
+//		 判断密码是否存在
+		
+//		 if(TextUtils.isEmpty(password)){
+//		 return false;
+//		 }else{
+//		 return true;
+//		 }
+		return !TextUtils.isEmpty(password);
+	}
+
 	private EditText et_set_pwd;
 	private EditText et_set_confirm;
 	private Button btn_ok;
@@ -212,7 +214,10 @@ public class HomeActivity extends Activity implements OnClickListener {
 	private AlertDialog dialog;
 
 	/**
-	 * 设置密码 设置密码输入框 et_set_pwd 确认密码输入框 et_set_confirm 确认按钮 btn_ok 取消按钮
+	 * 设置密码 设置密码输入框 
+	 * et_set_pwd 确认密码输入框 
+	 * et_set_confirm 确认按钮
+	 * btn_ok 取消按钮
 	 * btn_cancel
 	 * 
 	 */
@@ -222,6 +227,8 @@ public class HomeActivity extends Activity implements OnClickListener {
 		// 关联布局文件
 		View view = View.inflate(HomeActivity.this,
 				R.layout.popwindow_setpassword_dialog, null);
+//		builder.setView(view);
+//		builder.show();
 
 		et_set_pwd = (EditText) view.findViewById(R.id.et_set_pwd);
 		et_set_confirm = (EditText) view.findViewById(R.id.et_set_confirm);
@@ -258,7 +265,7 @@ public class HomeActivity extends Activity implements OnClickListener {
 
 				} else {
 					// 不一致,重新输入
-					Toast.makeText(HomeActivity.this, "两次密码输入不一致", 0).show();
+					Toast.makeText(HomeActivity.this, "两次密码输入不一致,请重新输入", 0).show();
 					return;
 				}
 
@@ -275,7 +282,6 @@ public class HomeActivity extends Activity implements OnClickListener {
 			}
 		});
 
-		// builder.setView(view);
 		// 兼容不同版本的显示效果
 		dialog = builder.create();
 		dialog.setView(view, 0, 0, 0, 0);
@@ -292,6 +298,8 @@ public class HomeActivity extends Activity implements OnClickListener {
 		AlertDialog.Builder builder = new Builder(HomeActivity.this);
 		View view = View.inflate(HomeActivity.this,
 				R.layout.popwindow_enterpassword_dialog, null);
+//		builder.setView(view);
+//		builder.show();
 
 		et_enter_pwd = (EditText) view.findViewById(R.id.et_enter_pwd);
 		btn_ok = (Button) view.findViewById(R.id.btn_ok);
@@ -314,8 +322,6 @@ public class HomeActivity extends Activity implements OnClickListener {
 				}
 				// 判断密码是否正确
 				if (MD5Utils.md5Password(password).equals(savePassword)) {
-					// 一致,保存密码
-
 					// 退出对话框
 					dialog.dismiss();
 					// 进入手机防盗页面

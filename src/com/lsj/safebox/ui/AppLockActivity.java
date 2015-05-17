@@ -22,6 +22,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * 程序加密
@@ -54,6 +55,7 @@ public class AppLockActivity extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_applock);
+		Toast.makeText(getApplicationContext(), "在加锁前别忘了设置里开启这个功能", Toast.LENGTH_LONG).show();
 		tv_unlock = (TextView) findViewById(R.id.tv_unlock);
 		tv_locked = (TextView) findViewById(R.id.tv_locked);
 		ll_unlock = (LinearLayout) findViewById(R.id.ll_unlock);
@@ -185,18 +187,6 @@ public class AppLockActivity extends Activity implements OnClickListener {
 
 							}
 						}, 500);
-
-						// new Thread(){
-						// public void run() {
-						// //休眠500
-						//
-						// //handler
-						//
-						//
-						//
-						//
-						// };
-						// }.start();
 
 					} else {
 						

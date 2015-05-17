@@ -4,14 +4,34 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <TextView
+     <!-- 公共top栏 开始 -->
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="55dip"
-        android:gravity="center"
-        android:background="#a5c34a"
-        android:text="设置向导"
-        android:textSize="23dip"
-        android:textColor="#ffffff" />
+        android:layout_height="45dp"
+        android:background="@drawable/flow_ball_ani_full_grey" >
+
+        <Button
+            android:id="@+id/main_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/arrow_left_grey"
+            android:textColor="#ffffff" />
+        
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_toRightOf="@id/main_back"
+            android:text="设置向导"
+            android:textColor="#ffffff"
+            android:textSize="22sp" />
+        
+    </RelativeLayout>
+    <!-- 公共top栏 结束 -->
     
     <TextView
         android:text="防盗卫士设置目录:"
@@ -20,8 +40,46 @@
     <TextView
         android:text="1.响铃警报"
         style="@style/text_content_style"
-        android:drawableLeft="@drawable/s_icon"
-        />
+        android:drawableLeft="@drawable/s_icon"/>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/presence_online" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/presence_invisible" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/presence_invisible" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/presence_invisible" />
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/setup1" />
+
+        <Button style="@style/button_next_style" 
+            />
+    </RelativeLayout>
     
 </LinearLayout>

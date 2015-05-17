@@ -48,12 +48,5 @@
             android:background="@drawable/grey_line_frame_background"
             android:text="当前状态：锁屏时杀死后台进程" />
         
-        <CheckBox
-            android:id="@+id/ch_shake_kill_process"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/grey_line_frame_background"
-            android:text="当前状态：未开启摇一摇清理" />
 
 </LinearLayout>

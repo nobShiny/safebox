@@ -79,7 +79,6 @@ public class SoftManagerActivity extends Activity implements OnClickListener {
 				}
 			}
 		});
-		// 5
 		lv_soft_manager.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -167,7 +166,6 @@ public class SoftManagerActivity extends Activity implements OnClickListener {
 		}
 	}
 
-	// 3
 	private class SoftAdapter extends BaseAdapter {
 
 		@Override
@@ -239,7 +237,6 @@ public class SoftManagerActivity extends Activity implements OnClickListener {
 
 	}
 
-	// 5.1
 	@Override
 	protected void onDestroy() {
 		// ±‹√‚¥∞ÃÂ–π¬∂
@@ -256,7 +253,6 @@ public class SoftManagerActivity extends Activity implements OnClickListener {
 		TextView tv_rom;
 	}
 
-	// 6
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
@@ -280,7 +276,6 @@ public class SoftManagerActivity extends Activity implements OnClickListener {
 		}
 	}
 
-	// 6.1
 	private void shared() {
 		/*
 		 * START {act=android.intent.action.SEND typ=text/plain flg=0x3000001
@@ -302,7 +297,6 @@ public class SoftManagerActivity extends Activity implements OnClickListener {
 		// startActivity(intent);
 	}
 
-	// 6.2
 	private void start() {
 		PackageManager manager = getPackageManager();
 		Intent launchIntentForPackage = manager
@@ -310,7 +304,6 @@ public class SoftManagerActivity extends Activity implements OnClickListener {
 		startActivity(launchIntentForPackage);
 	}
 
-	// 6.3
 	/*
 	 * <intent-filter> <action android:name="android.intent.action.VIEW" />
 	 * <action android:name="android.intent.action.DELETE" /> <category

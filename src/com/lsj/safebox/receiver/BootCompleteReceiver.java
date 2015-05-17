@@ -8,6 +8,11 @@ import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 
+/**
+ * 监听开机启动广播
+ * @author Administrator
+ *
+ */
 public class BootCompleteReceiver extends BroadcastReceiver {
 	private TelephonyManager manager;
 	private SharedPreferences sp;

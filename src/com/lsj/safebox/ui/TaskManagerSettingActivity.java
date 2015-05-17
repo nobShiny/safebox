@@ -26,7 +26,6 @@ public class TaskManagerSettingActivity extends Activity {
 	private CheckBox ch_shake_kill_process;
 	private SharedPreferences sp;
 	private Intent killProcessIntent;
-	private Intent shakekillProcessIntent;
 	private Button main_back;
 
 	@Override
@@ -36,7 +35,6 @@ public class TaskManagerSettingActivity extends Activity {
 		setContentView(R.layout.activity_task_manager_setting);
 		ch_show_system_process = (CheckBox) findViewById(R.id.ch_show_system_process);
 		ch_kill_process = (CheckBox) findViewById(R.id.ch_kill_process);
-		ch_shake_kill_process = (CheckBox) findViewById(R.id.ch_shake_kill_process);
 		main_back = (Button) findViewById(R.id.main_back);
 		boolean showsystem = sp.getBoolean("showsystem", true);
 		if (showsystem) {
@@ -100,39 +98,39 @@ public class TaskManagerSettingActivity extends Activity {
 					}
 				});
 		
-		/**
-		 * 摇一摇清理进程
-		 */
-		shakekillProcessIntent = new Intent(this, KillProcessService.class);
-		boolean shakekillProcessIntent = sp.getBoolean("killprocess", false);
-		if (killprocess) {
-			ch_kill_process.setText("当前状态：摇一摇清理进程已开启");
-			startService(killProcessIntent);
-		} else {
-			ch_kill_process.setText("当前状态：摇一摇清理功能已关闭");
-			stopService(killProcessIntent);
-		}
-		ch_shake_kill_process.setChecked(killprocess);
-		
-		ch_shake_kill_process.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-			
-			@Override
-			public void onCheckedChanged(CompoundButton buttonView,
-					boolean isChecked) {
-				Editor editor = sp.edit();
-				editor.putBoolean("killprocess", isChecked);
-				editor.commit();
-				
-				if (isChecked) {
-					ch_kill_process.setText("当前状态：摇一摇清理进程已开启");
-					startService(killProcessIntent);
-				} else {
-					ch_kill_process.setText("当前状态：摇一摇清理功能已关闭");
-					stopService(killProcessIntent);
-				}
-				
-			}
-		});
+//		/**
+//		 * 摇一摇清理进程
+//		 */
+//		shakekillProcessIntent = new Intent(this, KillProcessService.class);
+//		boolean shakekillProcessIntent = sp.getBoolean("killprocess", false);
+//		if (killprocess) {
+//			ch_kill_process.setText("当前状态：摇一摇清理进程已开启");
+//			startService(killProcessIntent);
+//		} else {
+//			ch_kill_process.setText("当前状态：摇一摇清理功能已关闭");
+//			stopService(killProcessIntent);
+//		}
+//		ch_shake_kill_process.setChecked(killprocess);
+//		
+//		ch_shake_kill_process.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+//			
+//			@Override
+//			public void onCheckedChanged(CompoundButton buttonView,
+//					boolean isChecked) {
+//				Editor editor = sp.edit();
+//				editor.putBoolean("killprocess", isChecked);
+//				editor.commit();
+//				
+//				if (isChecked) {
+//					ch_kill_process.setText("当前状态：摇一摇清理进程已开启");
+//					startService(killProcessIntent);
+//				} else {
+//					ch_kill_process.setText("当前状态：摇一摇清理功能已关闭");
+//					stopService(killProcessIntent);
+//				}
+//				
+//			}
+//		});
 		
 		main_back.setOnClickListener(new OnClickListener() {
 			

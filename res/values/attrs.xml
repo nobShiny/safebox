@@ -7,6 +7,11 @@
         <attr name="des_on" format="string" />
         <attr name="des_off" format="string" />
     </declare-styleable>
+    <declare-styleable name="com.lsj.safebox.custom.ui.SettingItemView">
+        <attr name="title2" format="string" />
+        <attr name="desc_on" format="string" />
+        <attr name="desc_off" format="string" />
+    </declare-styleable>
     
     <declare-styleable name="RippleView">
         <attr name="rv_alpha" format="integer" />

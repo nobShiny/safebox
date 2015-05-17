@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="yin">#BCBBBB</color>
     <color name="rippelColor">#FFFFFF</color>
     <color name="rippelColor2">#ff2f9b34</color>
     <color name="rippelColor3">#ff46b451</color>

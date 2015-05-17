@@ -37,6 +37,26 @@
         <item name="android:textSize">16.0dip</item>
         <item name="android:textColor">@color/textColorPrimaryDark</item>
     </style>
+    
+    <style name="button_next_style" parent="AppBaseTheme">
+        <item name="android:onClick">next</item>
+        <item name="android:drawableRight">@drawable/next</item>
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:text">下一步</item>
+    </style>
+
+    <style name="button_pre_style" parent="AppBaseTheme">
+         <item name="android:onClick">pre</item>
+        <item name="android:drawableLeft">@drawable/previous</item>
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:text">上一步</item>
+    </style>
 
     <!-- 文件管理器 开始 -->
     <style name="ShadowStyle">
@@ -415,6 +435,17 @@
         <item name="android:paddingBottom">6.0dip</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:background">@drawable/edit_text_bg</item>
+    </style>
+    
+  <style name="mainTabs_radio">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:textSize">10.0sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">5.0dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_weight">1.0</item>
     </style>
 
 </resources>

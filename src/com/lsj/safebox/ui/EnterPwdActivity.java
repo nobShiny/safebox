@@ -1,9 +1,11 @@
 package com.lsj.safebox.ui;
 
 import com.lsj.safebox.R;
+import com.lsj.safebox.utils.MD5Utils;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -24,6 +26,7 @@ public class EnterPwdActivity extends Activity {
 	private Intent intent;
 	private String packName;
 	private EditText ed_password;
+	private SharedPreferences sp;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,7 @@ public class EnterPwdActivity extends Activity {
 		iv_icon = (ImageView) findViewById(R.id.iv_icon);
 		tv_name = (TextView) findViewById(R.id.tv_name);
 		ed_password = (EditText) findViewById(R.id.ed_password);
+		sp = getSharedPreferences("config", MODE_PRIVATE);
 		//Activity自带的方法
 		intent = getIntent();
 		packName = intent.getStringExtra("packname");
@@ -43,7 +47,6 @@ public class EnterPwdActivity extends Activity {
 			String name = packInfo.applicationInfo.loadLabel(pm).toString();
 			tv_name.setText(name);
 		} catch (NameNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -61,10 +64,6 @@ public class EnterPwdActivity extends Activity {
 		// TODO Auto-generated method stub
 		// 到桌面去
 		Intent intent = new Intent();
-		// <action android:name="android.intent.action.MAIN" />
-		// <category android:name="android.intent.category.HOME" />
-		// <category android:name="android.intent.category.DEFAULT" />
-		// <category android:name="android.intent.category.MONKEY"/>
 		intent.setAction("android.intent.action.MAIN");
 		intent.addCategory("android.intent.category.HOME");
 		startActivity(intent);
@@ -73,6 +72,7 @@ public class EnterPwdActivity extends Activity {
 	public void ok(View view) {
 		// 1.得到密码
 		String password = ed_password.getText().toString().trim();
+		String savePassword = sp.getString("password", "");
 
 		// 2.判空和校验密码是否正确
 		if (TextUtils.isEmpty(password)) {
@@ -80,15 +80,16 @@ public class EnterPwdActivity extends Activity {
 		} else {
 
 			// 3.判断密码是否正确
-			if ("123".equals(password)) {
+			if (MD5Utils.md5Password(password).equals(savePassword)) {
 				
 				Intent intent = new Intent();
 				intent.setAction("com.lsj.safebox.stopprotecting");
-				intent.putExtra("packname", packName);
+				intent.putExtra("packname",packName);
 				
 				sendBroadcast(intent);
 				// 4.放行
 				finish();
+				Toast.makeText(getApplicationContext(), "程序已解锁", Toast.LENGTH_LONG).show();
 				
 			}else{
 				Toast.makeText(this, "密码错误,请重试", 1).show();

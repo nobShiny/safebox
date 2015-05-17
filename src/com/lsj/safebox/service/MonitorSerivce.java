@@ -48,7 +48,7 @@ public class MonitorSerivce extends Service{
 			receiver = new InnerReceiver();
 			IntentFilter filter = new IntentFilter();
 			filter.addAction("com.lsj.safebox.stopprotecting");
-			registerReceiver(receiver, filter );
+			registerReceiver(receiver, filter);
 			//×¢²áÄÚÈİ¹Û²ìÕß
 			Uri uri = Uri.parse("content://com.lsj.safebox.dbchange");
 			contentObserver = new MyContentObserver(new Handler());
