@@ -256,7 +256,7 @@ public class HomeActivity extends Activity implements OnClickListener {
 					Editor editor = sp.edit();
 					editor.putString("password", MD5Utils.md5Password(password));
 					editor.commit();
-					// 退出对话框
+					// 退出对话框	
 					dialog.dismiss();
 					// 进入手机防盗页面
 					Intent intent = new Intent(HomeActivity.this,

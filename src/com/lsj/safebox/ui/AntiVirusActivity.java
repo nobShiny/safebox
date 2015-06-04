@@ -159,9 +159,6 @@ public class AntiVirusActivity extends Activity {
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
-					
-					
-					
 				}
 				
 				Message msg = Message.obtain();
