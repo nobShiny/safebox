@@ -2,12 +2,6 @@ package com.lsj.safebox.service;
 
 import java.lang.reflect.Method;
 
-
-
-
-import com.android.internal.telephony.ITelephony;
-import com.lsj.safebox.db.dao.BlankNum;
-
 import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
@@ -15,16 +9,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.ContentObserver;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.BitmapFactory.Options;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.IBinder;
 import android.telephony.PhoneStateListener;
 import android.telephony.SmsMessage;
 import android.telephony.TelephonyManager;
-import android.widget.ImageView;
+import android.util.Log;
+
+import com.android.internal.telephony.ITelephony;
+import com.lsj.safebox.db.dao.BlankNum;
 
 public class BlankNumService extends Service {
 	private SMSReceiver receiver;
@@ -100,11 +94,18 @@ public class BlankNumService extends Service {
 
 	}
 
+	/**
+	 * 短信拦截
+	 * @author Administrator
+	 *
+	 */
+	
 	private class SMSReceiver extends BroadcastReceiver {
 
 		@Override
 		public void onReceive(Context context, Intent intent) {
-
+			Log.i("TAG","短信拦截拦截");
+			//检查来信人是否是黑名单人员
 			Object[] objs = (Object[]) intent.getExtras().get("pdus");
 			for (Object obj : objs) {
 				// 创建一条短信
@@ -141,6 +142,9 @@ public class BlankNumService extends Service {
 		super.onDestroy();
 	}
 
+	/**
+	 * 拦截电话
+	 */
 	public void endCall() {
 		Class<?> loadClass;
 		try {

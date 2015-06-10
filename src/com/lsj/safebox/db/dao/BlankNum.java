@@ -124,7 +124,7 @@ public class BlankNum {
 	}
 
 	/**
-	 * 查询不部黑名单
+	 * 查询部分黑名单
 	 * 
 	 * @return
 	 */
